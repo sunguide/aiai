@@ -1,0 +1,106 @@
+body{font-family: Microsoft YaHei,simsun,Arial,sans-serif;}
+/*平台头部logo样式，模板Public:head_logo-->*/
+.head_logo{width:90%;height:80px;margin:auto}
+.head_logo .com_logo{float:left;}
+.head_logo .com_meg{float:right;}
+.head_logo .user_meg{width:100%;height:30px;float:left}
+/*短信库内容表格*/
+.holiday-content tr td a{height:40px;display:block;overflow:hidden;text-align:center;}
+.holiday-content tr td a:hover{text-decoration:none}
+/*短信内容字数*/
+.word-number i{display:block;width:auto;}
+/*我的通讯录*/
+.contact-list td{text-align:center;}
+/*左侧菜单样式*/
+.menu{background-color: #FFFFFF;border-radius: 6px 6px 6px 6px;box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067); margin: 30px 0 0;padding: 0;list-style: none outside none;}
+.menu li{line-height: 20px;}
+.menu > li:first-child > a{ border-radius: 6px 6px 0 0;}
+.menu > li > a{ border: 1px solid #E5E5E5;display: block;margin: 0 0 -1px;padding: 8px 14px;}
+a {color: #0088CC; text-decoration: none;}
+.menu > li > a:hover{text-decoration: none;background:#F5F5F5}
+.menu > li > a > i.icon-chevron-right{float: right; margin-right: -6px; margin-top: 2px; opacity: 0.25;}
+.menu > .active > a{background: linear-gradient(45deg, #B24926 0%, #FAA523 100%) repeat scroll 0 0 transparent;color: #FFFFFF;}
+.child-menu > li > a.child-active{ background-color: #0088CC;color: #FFFFFF;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);}
+/* LeftArea - header */
+header {
+	position: relative;
+	height: 192px;
+	background: url(../img/border.png) no-repeat 0 100%;
+	margin: 0 -2px 4px;
+	padding: 0 40px;
+	text-align: center;
+}
+h1 a {
+	text-indent: -9999px;
+	display: block;
+	background-position: 0 0;
+	width: 124px;
+	height: 69px;
+	margin: 10px auto 0;
+}
+header p {
+	text-indent: -9999px;
+	width: 170px;
+	height: 37px;
+	margin: 10px auto 0;
+	background-position: -140px 0;
+}
+header:after {
+	content: url(../img/balloon-fukusuke.png);
+	position: absolute;
+	bottom: -13px;
+	left: 105px;
+}
+/* Tighten up footer */
+.footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+/* image 64px */
+.img64 {
+  margin:2px;	
+  width: 64px;
+  height: 64px;
+}
+/* center */
+.center {
+  padding:20px;
+}
+.sidebar-nav {
+	padding:10%;
+}
+.left_nav {
+	padding: 30px 10px 30px;
+	border: 1px solid #b3b3b3;
+	border-radius: 6px;
+	margin: 0 auto;
+	margin-top:20px;
+	margin-bottom:20px;
+	box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
+	background: #fff;/**#fcfcfc;**/	
+}
+.main_content {
+	float:left;
+	padding: 30px 10px 30px;
+	border: 1px solid #b3b3b3;
+	border-radius: 6px;
+	margin:20px 20px;
+	box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
+	background: #fcfcfc;	
+}
+.main {
+	float:left;
+	padding: 30px 10px 30px;
+	border: 1px solid #b3b3b3;
+	border-radius: 6px;
+	margin:20px auto;
+	box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
+	background: #fcfcfc;	
+}
+.textarea{
+	width:80%;
+	min-height:200px;
+}
+.page-header{
+	text-align:center;
+}

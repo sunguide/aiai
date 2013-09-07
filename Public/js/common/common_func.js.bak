@@ -1,0 +1,130 @@
+//左侧子菜单的显示方式
+function dis_menu(parent_id,child_id,time,value=""){
+	$("#"+parent_id).click(function(){
+		mySite(value);
+		//将子菜单为block的，隐藏起来
+		$(".child-menu").each(function(i){
+			if($(this).css("display")=="block"){
+				$(this).slideUp(500);
+			}
+		});
+		//为没有选中的父菜单去除className:active
+		$(".parent-menu").each(function(){
+			$(".active").removeClass("active");
+		});
+		//为选中的父菜单添加className:active
+		$("#"+parent_id).toggleClass("active");
+		var display=$("#"+child_id).css("display");
+		if(display == "block"){
+			$("#"+child_id).slideUp(time);
+			return;
+		}
+		$("#"+child_id).slideDown(time);
+	});
+}
+//控制content的加载不同的模板文件
+function _MP(src,id,value=""){
+	//更新子节点菜单
+//	alert($(".one .menu #send span").html());
+	mySiteChild(value);
+	//为没有选中的父菜单去除className:child-active
+	$(".child-menu menu").each(function(){
+		$(".child-menu").removeClass("child-active");
+	});
+	//为选中的父菜单添加className:child-active
+	$("#"+id).toggleClass("child-active");
+	$("#maincontent").load(src);
+}
+//给输入号码框绑定键盘Enter时间，并判断电话号码是否符合要求
+function keyboards_Enter(id,targetid){
+	$("#"+id).keypress(function(e){
+		var key = e.which;
+		if(key == 13){
+			var number = $(this).val();
+			var pat = /^(13[0-9]{9})|(15[0-9]{9})|(18[0-9]{9})$/ ;
+			if(number == ""){
+				$.warn('输入号码为空，请重新输入……');
+				return;
+			}
+			var arr_num = number.split(',');
+			var num_err = "";
+			var num_rig = "";
+			for(var i=0;i<arr_num.length;i++){
+				var num_exist=pat.test(arr_num[i]);
+				if(num_exist == false){
+					var num_err = num_err+arr_num[i]+",";
+					continue;
+				}
+				var num_rig = num_rig+arr_num[i]+",";
+			}
+			if(num_err != ""){
+				$.warn('输入有不合法的号码:'+num_err);
+				$("#inputnumber").val(num_err);
+				$("#"+targetid).append(num_rig);
+				return;
+			}
+			$(this).val("");
+			$("#"+targetid).append(number+",");
+		}
+	});
+}
+//点击短信库内容，后插入发送短信界面短信内容事件
+function insertMegContent(content){
+	$(".modal-table").fadeOut(500,function(){
+		$("#sendcontent").val("").val(content);
+	});
+	clearDynamicHtml();
+}
+//统计短信内容框里的字数
+function statWordNum(attr){
+	var length = $("#"+attr).val().length;
+	if(length>=0 && length<=70){
+		$("#word-number i").css("color","green");
+	}else if(length>70 && length<=200){
+		$("#word-number i").css("color","#00BB00");
+	}else if(length>200 && length<=210){
+		$("#word-number i").css("color","red");
+	}else{
+		$("#sendcontent").val($("#sendcontent").val().substr(0,210));
+		$("#word-number i").html("210");
+		return;
+	}
+	$("#word-number i").html(length);
+}
+//我的通讯录里，事件：选中所有的联系人
+function selectAllContact(){
+	if($("#contact-delete-all").attr("checked") == "checked"){
+		$("input[class='contact-delete']").attr("checked","checked");
+		return;
+	}
+	$("input[class='contact-delete']").removeAttr("checked","checked");
+}
+//关闭对话框之后，清空div:id=dynamic-html中的
+function clearDynamicHtml(){
+	$("#dynamic-html").empty();
+}
+//弹出添加联系人窗口
+function addContact(url){
+	$.table("添加联系人");
+	$(".modal-body").load(url);
+}
+//更新我的位置(父节点)
+function mySite(value){
+	$(".head_logo .user_meg .breadcrumb").html("<li><a>首页</a><span class='divider'>/</span></li><li><a>"+value+"</a><span class='divider'>/</span></li>");
+}
+//更新我的位置(子节点)
+function mySiteChild(value){
+	$(".head_logo .user_meg .breadcrumb").html("<li><a>首页</a><span class='divider'>/</span></li><li><a>"+value+"</a><span class='divider'>/</span></li>");
+}
+//获取菜单的名字
+function getName(site){
+	return $("."+site).html();
+}
+//获得手机的归属地信息
+function getMobileMeg(url,mobile){
+	$.getJSON(url,{mobile:mobile},function(json){
+	//	alert(json.data.province);
+		$("input[name='province']").val(json.data.province);
+		$("input[name='corp']").val(json.data.corp);
+	});
+}

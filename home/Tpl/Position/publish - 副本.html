@@ -1,0 +1,64 @@
+<include file="Public:head"/>
+<div class="container-fluid">
+  <div class="row-fluid">
+	 <div class="span3">
+		<include file="Public:left_nav" />
+	 </div>
+	<div class="span9 main">
+		
+			 <section id="publish">
+			 <div class="page-header">
+				   <h1>发布文章</h1>
+			 </div>
+				<form class="form-horizontal" action="__URL__/publish" method="post">				  
+				    <input type="text" class="span6" name="article_title" placeholder="输入标题" />
+					<input type="text" class="span3" name="position_image" placeholder="图片地址" />
+					<hr>
+					<textarea rows="5" class="span6" name="action_description" placeholder="动作说明"></textarea>
+					<hr>
+					<input type="text" class="span6" name="difficulty_index" placeholder="难度指数" /><hr>
+					<textarea rows="3" class="span6" name="diffculty_description" placeholder="难度说明"></textarea>
+					<hr>
+					<input type="text" class="span6" name="pleasure_index" placeholder="快感指数" /><hr>
+					<textarea rows="3" class="span6" name="pleasure_description" placeholder="快感说明"></textarea>
+					<hr>
+					<input type="text" class="span6" name="eyeful_index" placeholder="养眼指数" /><hr>
+					<textarea rows="3" class="span6" name="eyeful_description" placeholder="养眼说明"></textarea>
+					<hr>
+					<input type="text" class="span6" name="health_index" placeholder="养生指数" /><hr>
+					<textarea rows="3" class="span6" name="health_description" placeholder="养生说明"></textarea>
+					<button type="submit" class="btn btn-large btn-primary">提交</button>
+					<button type="button" id="fat-btn" class="btn btn-large" data-loading-text="自动保存中">存为草稿</button>
+					
+				</form>
+			</section>
+		
+	</div>
+   
+   <div>
+</div>
+
+<script>
+  // button state demo
+    $('#fat-btn').click(function () {
+        var btn = $(this);
+        btn.button('loading');
+	
+		var title = $('#article_title').val(); 
+		var content = $('#editor_id').val();
+		 alert(content);
+		 $.post('{:U("Articles/publish")}',{article_title:title,article_content:content},function(data){
+		 alert(data.info);
+		 if(data.status == 1){
+		    btn.button('reset');
+		 }else{
+			$('#fat-btn').html('自动保存失败');//如果是input或者textarea 使用$('#fat-btn').val();
+		 }
+		}); 
+			
+         
+      
+      });
+
+</script>
+<include file="Public:foot">

@@ -1,0 +1,33 @@
+<include file="Public:head"/>
+<!--<include file="Public:head_nav"/>--->
+
+<div class="container-fluid">
+  <div class="row-fluid">
+  <ul class="nav nav-list">
+    <for start="1" end="107">
+     
+		  <!-- Modal -->
+		  <a href="#" onclick="getPosition({$i})" data-toggle="modal"><img src="__PUBLIC__/images/64/ps{$i}.png" class="img65 img-polaroid" alt="300x200"></a>	  
+	</for>
+	<a href="#"onclick="getPosition(-1)" data-toggle="modal"><img src="__PUBLIC__/images/add.png" class="img65 img-polaroid" alt="300x200"></a>
+	 </ul>
+  </div>
+</div>
+<script>
+	//加查看姿势
+	function getPosition(pid){
+		$.post('{:U("Position/getPosition")}',{id:pid},function(json){
+			 //alert(json.info);
+			 if(json.status == 1){
+				$.warn(json.data.article_title,json.data.action_description);
+				//$('#myModalLabel').html(json.data.article_title);
+				//$('#position_image').attr('src','__PUBLIC__/images/b/p'+json.data.position_image+'.png');
+				
+			 }else{
+				$.warn('暂无介绍','<a href="{:U("Position/publish")}">邀请您来完善</a>');
+			 }
+			}); 
+	}
+	
+</script>
+<include file="Public:foot"/>

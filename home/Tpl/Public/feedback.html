@@ -1,0 +1,44 @@
+<include file="Public:head" />
+		<div id="feedbackDiv">
+			<h3 id="myModalLabel"><center><img src="__PUBLIC__/images/small_logo_floor.png" alt="logo" style="margin-top:20px;"></center></h3>
+
+			<p style="text-align:center"><span>非常感谢您的提议，您的意见将是促使我们进步的强有力支持！</span></p>
+			<form class="form-inline" id="feedback_form">
+		
+			 <center><input type="text" class="input-login span5" style="border:0px;height: 45px;position:absolute;vertical-align:middle;margin: 0 0 20px;background:#F0F0F0;position: relative;"
+ placeholder="标题" id="feedback_title" /> </center>
+
+			  <center><textarea rows="6" type="text" class="input-login span5" style="border:0px;position:absolute;vertical-align:middle;margin: 0 0 20px;background:#F0F0F0;position: relative;" placeholder="内容" id="feedback_content" ></textarea> </center>
+			  
+			  
+			 
+			</form>
+			
+		  <div class="modal-footer">
+			<center><button type="submit" id="feedback" status="0" class="btn btn-primary" style="width:288px;height:50px;font-size:28px;">立即反馈</button></center>
+		  </div>
+		</div>
+<script>
+	$('#feedback').click(function () {
+			var $title = $('#feedback_title').val();
+			var $content = $('#feedback_content').val();
+			var $status = $('#feedback').attr('status');
+			if($status == 0){
+				if(!$title || !$content) return;
+				$.getJSON('{:U("Public/feedback")}',{title:$title,content:$content},function(data){
+			
+					if(data.status == 1){
+						$('#feedback_form').html('<p style="padding: 20px 20px;background:#3CB371;color:#fff;">'+data.info+'</p>');
+						$('#feedback').attr('status',1);
+						$('#feedback').html('立即关闭');
+					}else{
+					  
+					}
+				});
+			}else{
+				$('#dynamic-html').empty();
+			}
+	});
+
+</script>
+<include file="foot" />

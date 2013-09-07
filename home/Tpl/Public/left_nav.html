@@ -1,0 +1,42 @@
+<div class="left_nav">
+	<header>
+		<h1><a href="__APP__"><span></span></a></h1>
+		<span>Let's Love !</span>
+	</header>
+	<ul class="nav nav-list ">	
+		<li class=""></li>
+	</ul>
+	<ul class="parent-menu menu ">
+		<li class="" id="li-one"><a href="__APP__/Position/category"><i class="icon-chevron-right"></i><span>分类查看</span></a></li>
+		<li class="" id="li-two"><a href="__APP__/Position/allPosition"><i class="icon-chevron-right"></i><span>所有姿势</span></a></li>
+		<php>if(session('uid')){
+		echo '
+			<li class="" id="li-two"><a href="__APP__/Position/nodo"><i class="icon-chevron-right"></i><span>未尝试的</span></a></li>	
+			<li class="" id="li-two"><a href="__APP__/Position/havedone"><i class="icon-chevron-right"></i><span>已尝试的</span></a></li>	
+			<li class="" id="li-two"><a href="__APP__/Position/todo"><i class="icon-chevron-right"></i><span>要尝试的</span></a></li>	
+			<li class="" id="li-two"><a href="__APP__/Position/myCreated"><i class="icon-chevron-right"></i><span>我创造的</span></a></li>	
+			<li class="" id="li-two"><a href="__APP__/Position/myFavorites"><i class="icon-chevron-right"></i><span>我收藏的</span></a></li>
+		';
+		}</php>
+				
+		<!--<li class="" id="li-two"><a href="__APP__/Position/everylove"><i class="icon-chevron-right"></i><span>每日一爱</span></a></li>-->	
+		<li class="" ><a href="#" id="myAccount"><i class="icon-chevron-right"></i><span>我的账号<span></a></li>
+			
+
+	</ul>
+    <include file="Public:left_foot" />
+</div>
+<script>
+  $('#myAccount').click(function () {
+		  
+		$.getJSON("__APP__/Account/accountInfo",{id:1},function(json){
+			if(json.status == 1){
+				$.warn('账号信息',json.data.account);
+				
+			}else{
+				$.warn('账号信息',"查询失败");
+			}
+		});
+});
+
+</script>

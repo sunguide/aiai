@@ -1,0 +1,68 @@
+<include file="Public:head"/>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3">
+		<include file="Public:left_nav" />
+	</div>
+	<style>
+	.position_cate {background-color:#fff; height: 130px;cursor: pointer;border-bottom: 1px solid #eee;overflow: hidden;height:250px}
+	.position_cate:hover{background: #e7f4fb;}
+	.position_cate p {text-align: center;text-align: center;font-size: 50px;line-height: 100px;border-left: 1px solid #eee;font-family: Arial;color: #1f90c8;display: block;padding: 40px 0 0;
+	}
+	.position_cate a{text-decoration:none}
+	</style>
+	<div class="span9 main">
+		<div class="container-fluid">
+		  <div class="row-fluid">
+			  <a href="__APP__/Position/getCategory/category_id/1">
+				  <div class="span4 position_cate">
+					<p>花田喜事</p>
+				  </div>
+			  </a>
+			  <a href="__APP__/Position/getCategory/category_id/2">
+				  <div class="span4 position_cate">
+					<p>翻云覆雨</p>
+				  </div>
+			  </a>
+			 <a href="__APP__/Position/getCategory/category_id/3">
+			   <div class="span4 position_cate">
+			 	 <p>卧虎藏龙</p>
+			   </div>
+			 </a>
+		  </div>
+		  <div class="row-fluid">
+			<a href="__APP__/Position/getCategory/category_id/4">
+			  <div class="span4 position_cate">
+				<p>快马加鞭</p>
+			  </div>
+			 </a>
+			<a href="__APP__/Position/getCategory/category_id/5">
+			  <div class="span4 position_cate">
+				<p>腾云驾雾</p>
+			  </div>
+			</a>
+		   <a href="__APP__/Position/getCategory/category_id/6">
+			  <div class="span4 position_cate">
+				<p>龙飞凤舞</p>
+			  </div>
+		   </a>
+		 </div>
+		  
+  </div>
+</div>
+<script>
+	//加查看姿势
+	function getPosition(pid){
+		$.post('{:U("Position/getPosition")}',{id:pid},function(json){
+			 //alert(json.info);
+			 if(json.status == 1){
+				$('#myModalLabel').html(json.data.article_title);
+				$('#modal-body').html(json.data.content);
+			 }else{
+				$('#modal-body').html(json.info);//如果是input或者textarea 使用$('#fat-btn').val();
+			 }
+			}); 
+	}
+	
+</script>
+<include file="Public:foot"/>

@@ -1,0 +1,109 @@
+<include file="Public:head"/>
+<!-- <include file="Public:head_nav"/> -->
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3">
+		<include file="Public:left_nav" />
+	</div>
+	
+	<div class="span9 main">
+		<section id="publish">
+		  <div class="row-fluid">
+			<div class="span4">
+			  <a href="#" class="thumbnail"><img alt="" src="__PUBLIC__/images/b/p1.png"></a>
+			  
+		    </div>
+			<div class="span8">
+				<div class="page-header">
+				   <h2>降龙十八掌</h2> 又名:杀生，地方 <span class="badge badge-info">123232</span>学习<span class="badge badge-important">1234</span>想试<span class="badge badge-success">343</span>已试 
+			    </div>
+
+			</div>
+		  </div>
+		</section>
+		<section>
+			<div class="page-header">
+				<h2>概述</h2> 
+				<p>就像数字6和9排在一起的样子，是彼此最亲密的沟通方式</p>
+				<h2>点评</h2> 
+				<p>充满禁忌快感的经典招式，探索最奥妙的神秘地带。</p>
+			</div>
+			<div class="page-header">
+				<h2>动作要点</h2> 
+				<p>最具代表性的男女口交姿势。本式练法是男生仰躺，女生面朝男生的阴茎，阴户则朝着男生的脸，全身趴在男生身上，
+				男生对着女生的阴户，女生对着男生的阴茎，随你们高兴进行吹含吸舔，两个人头脚颠倒相对的样子，就跟阿拉伯数字6和9排在一起的样子。</p>
+			</div>
+			
+			<div class="page-header">
+				<h2>天使之悦</h2> 
+				<p>充满了禁忌快感的经典招式。男女生能以最近的距离探索对方身体最奥妙的什么地带，试探并观察这里的每一个丁点细微的反应，把你们以前老是跳过去没教的健康课程全部补回来。</p>
+			</div>
+			<div class="page-header">
+				<h2>恶魔之殇</h2> 
+				<p>男女生面对的都是对方的生殖器，所以既不能欣赏对方的表情，也不能做其他部位的爱抚动作，所以你们得把所有找乐子的重心全部集中在这里。</p>
+			</div>
+			<div class="page-header">
+				<h2>爱的初体验</h2> 
+			</div>
+			<div>
+			<div class="row-fluid">
+			  <div class="span9">
+			    <textarea class="span12" onclick="this.innerHTML='';">使用心得与感言！</textarea>
+				<ul class="list">
+					<li class="feel-select">
+					  <input tabindex="1" type="radio" id="input-1" name="demo-radio">
+					  <label class="label label-info" for="input-1">糟透了</label>
+					  
+					</li>
+					<li class="feel-select">
+					  <input tabindex="2" type="radio" id="input-2" name="demo-radio">
+					  <label class="label label-info" for="input-2">没感觉</label>
+					  
+					</li>
+					<li class="feel-select">
+					  <input tabindex="3" type="radio" id="input-3" name="demo-radio">
+					  <label class="label label-info" for="input-3">舒服</label>
+					 
+					</li>
+					<li class="feel-select">
+					  <input tabindex="4" type="radio" id="input-4" name="demo-radio">
+					  <label class="label label-info" for="input-4">再来一次</label>
+					  
+					</li>
+					<li class="feel-select">
+					  <input tabindex="4" type="radio" id="input-4" name="demo-radio">
+					  <label class="label label-info" for="input-4">爽死了</label>
+					  
+					</li>
+			      </ul>
+			   </div>
+			   <div class="span3">
+					<a href="#" class="btn btn-primary btn-large span10">提交</a>
+			   </div>
+			</div>
+		  </div>
+		</section>
+	</div>
+   
+  <div>
+</div>
+<script>
+$(document).ready(function(){
+  $('input').each(function(){
+    var self = $(this),
+      label = self.next(),
+      label_text = label.text();
+
+    label.remove();
+    self.iCheck({
+      checkboxClass: 'icheckbox_line-blue',
+      radioClass: 'iradio_line-blue',
+      insert: '<div class="icheck_line-icon"></div>' + label_text
+    });
+  });
+});
+</script>
+     
+<script src="__PUBLIC__/js/icheck/jquery.icheck.min.js?v=0.9.1"></script>
+<include file="Public:foot">

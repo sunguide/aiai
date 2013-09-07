@@ -1,0 +1,8 @@
+<table class="table table-bordered">
+	<tbody>
+		<tr><td style="background:#F5F5F5" width=60>手机号码:</td><td><input type="text" name="mobile" id="mobile"/></td></tr>
+		<tr><td style="background:#F5F5F5">归属地:</td><td><input type="text" disabled name="province"/></td></tr>
+		<tr><td style="background:#F5F5F5">运营商:</td><td><input type="text" disabled/ name="corp"></td></tr>
+		<tr><td colspan="2"><input type="button" class="btn" value="查询" onclick="getMobileMeg('__URL__/checkMobile',$('input[name='mobile'].val()'));"/></td></tr>
+	</tbody>
+</table>

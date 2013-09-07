@@ -1,0 +1,196 @@
+<include file="Public:head"/>
+<!-- <include file="Public:head_nav"/> -->
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3">
+		<include file="Public:left_nav" />
+	</div>
+	
+	<div class="span9 main">
+		<section id="publish">
+		  <div class="row-fluid">
+			<div class="span4">
+			  <a href="#" class="thumbnail"><img alt="" src="__PUBLIC__/images/b/p{$list.position_image}.png"></a>
+			  
+		    </div>
+			<div class="span8">
+				<div class="page-header">
+				   <h2>{$list.article_title}</h2> 
+				   <span class="badge badge-info" id="position_1" status="0" value="{$list.view}">{$list.view}</span><a href="#" onclick="operate(1)">学习</a>
+				   <span class="badge badge-important" id="position_2" status="0" value="{$list.todo}">{$list.todo}</span><a href="#" onclick="operate(2)">想试</a>
+				   <span class="badge badge-success" id="position_3" status="0" value="{$list.havedone}">{$list.havedone}</span><a href="#" onclick="operate(3)">已试 </a>
+			    </div>
+
+			</div>
+		  </div>
+		</section>
+		<section>
+			<div class="page-header" style="color:#3CB371">
+				<div>
+					<h3>动作说明</h3>
+					<div class="block">
+						<p>{$list.action_description}</p>
+					</div>
+				</div>
+				<div>
+					<h3>难易指数:{$list.difficulty_index}分</h3>
+					<div class="block">
+						<p>{$list.diffculty_description}</p>
+					</div>
+				</div>
+				<div>
+					<h3>快感指数:{$list.pleasure_index}分</h3>
+					<div class="block">
+						<p>{$list.pleasure_description}</p>
+					</div>
+				</div>
+				<div>
+					<h3>养眼指数:{$list.eyeful_index}分</h3>
+					<div class="block">
+						<p>{$list.eyeful_description}</p>
+					</div>
+				</div>
+				<div>
+					<h3>养生指数:{$list.health_index}分</h3>
+					<div class="block">
+						<p>{$list.health_description}</p>
+					</div>
+				</div>
+				
+			<div>
+			<div class="row-fluid">
+			   <div class="span8" style="margin-left:5px" >
+			    <textarea class="span12" onclick="this.innerHTML='';" id="feel_content">使用心得与感言！</textarea>
+			   </div>
+				
+			</div>
+			<div class="row-fluid">
+				<div class="list span5" style="height:40px">
+					<ul id="feel_vote" style="margin-left:5px">
+						<li class="feel-select" id="vote1" onclick="vote(1)" style="background:#333">
+						糟透了
+						 
+						  
+						</li>
+						<li class="feel-select" id="vote2" onclick="vote(2)" style="background:#f89406">
+						  没感觉
+						  
+						</li>
+						<li class="feel-select" id="vote3" onclick="vote(3)" style="background:#3a87ad">
+						  好舒服
+						</li>
+						<li class="feel-select" id="vote4" onclick="vote(4)" style="background:#468847">
+						  我还要
+						  
+						</li>
+						<li class="feel-select" id="vote5" onclick="vote(5)" style="background:rgb(214, 3, 62);">
+						  爽死了
+						</li>
+				   </ul>
+			   </div>
+			   <div  class="span4" style="padding-top:5px;float:left">
+						<a class="btn btn-primary btn-large span10" id="feel" onclick="feel()">提交</a>
+			   </div>
+			</div>
+		  </div>
+		</section>
+	</div>
+    <div id="myModolContainter">
+		 <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3 id="myModalLabel">Modal header</h3>
+		  </div>
+		  <div class="modal-body">
+			<p id="modal-body">One fine body…</p>
+		  </div>
+		  <div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+			<button class="btn btn-primary">查看</button>
+		  </div>
+		</div>
+   </div>
+
+
+  <div>
+</div>
+
+<script>
+	function vote(id){
+		//$("#vote"+id).css('background-image','__PUBLIC__/images/'); 
+		var feelVote = $("#feel_vote").attr("value");
+		if(feelVote > 0){
+			$.warn("提示","你已经选择过了。");
+		}else{
+			$("#vote"+id).css('background','#00BB00');
+			$("#vote"+id).html('已选择');
+			$("#feel_vote").attr("value",id);
+			
+			getPosition();
+			var $pid = {$list.id};
+			$.getJSON('{:U("Position/feelVote")}',{pid:$pid,vote:id},function(data){
+				
+				  if(data.status == 1){
+					 //alert(data.info);
+					 //$("div").remove('#login');
+					 $('.modal-body').html(data.info);
+					 $("#vote"+id).css('color','#fff');
+					 $("#vote"+id).html('已选择');
+				  }else{
+					 alert(data.info);
+					 
+					 $("#vote"+id).html('选择失败');
+				  }
+			   }); 
+		}
+	}
+	//加查看姿势
+	function getPosition(){
+		
+		//$("#myModal").removeClass("hide fade");
+	   // $("#myModolContainter").attr("aria-hidden",false);
+		//$('#myModalLabel').html("确定");
+		//$('#modal-body').html(json.data.content);
+		
+	}
+	function operate(id){
+		var operateStatus = $("#position_"+id).attr("status");
+		if(operateStatus == 0){
+			var $pid = {$list.id};
+			$.getJSON('{:U("Position/positionOperate")}',{pid:$pid,action:id},function(data){
+				
+				  if(data.status == 1){
+					 var pvalue = $('#position_'+id).attr('value');
+					 //$("div").remove('#login');
+					 $('#position_'+id).html(parseInt(pvalue)+1);
+					 $('#position_'+id).attr('status',1);//让其不再增加
+				  }else{
+					$.warn("提示","未知错误");
+				  }
+			   }); 
+		}else{
+			$.warn("提示","你已经选择过了。");
+			var operateStatus = $("#position_"+id).attr("status");
+		}
+	}
+	function feel(){
+		var $pid = {$list.id};
+		var $feel_content = $('#feel_content').val();
+		//alert($feel_content);
+		if($feel_content){
+			$.getJSON('{:U("Position/positionFeel")}',{pid:$pid,feel:$feel_content},function(data){
+					
+			  if(data.status == 1){
+				 $.warn("提示","提交成功");
+			  }else{
+				 $.warn("提示","未知错误");
+			  }
+			}); 
+	   }
+	}
+	
+</script>
+     
+
+<include file="Public:foot">

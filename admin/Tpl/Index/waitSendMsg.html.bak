@@ -1,0 +1,27 @@
+<table class="table table-bordered table-striped table-hover">
+	<thead><tr><td><input type="checkbox"/></td><td>账户名称</td><td>收信号码</td><td>发送时间</td><td>短信内容</td><td>状态</td><td>操作</td></tr></thead>
+	<tbody>
+		<tr><td><input type="checkbox"/></td><td>smcm</td><td>15226165776</td><td>2013/7/5</td><td>就是短信内容</td><td>待发送</td><td><span class="label label-important" style="cursor:pointer">查看</span></td></tr>
+		<tr><td><input type="checkbox"/></td><td>smcm</td><td>15226165776</td><td>2013/7/5</td><td>就是短信内容</td><td>待发送</td><td><span class="label label-important" style="cursor:pointer">查看</span></td></tr>
+		<tr><td><input type="checkbox"/></td><td>smcm</td><td>15226165776</td><td>2013/7/5</td><td>就是短信内容</td><td>待发送</td><td><span class="label label-important" style="cursor:pointer">查看</span></td></tr>
+		<tr><td><input type="checkbox"/></td><td>smcm</td><td>15226165776</td><td>2013/7/5</td><td>就是短信内容</td><td>待发送</td><td><span class="label label-important" style="cursor:pointer">查看</span></td></tr>
+		<tr><td><input type="checkbox"/></td><td>smcm</td><td>15226165776</td><td>2013/7/5</td><td>就是短信内容</td><td>待发送</td><td><span class="label label-important" style="cursor:pointer">查看</span></td></tr>
+		<tr><td><input type="checkbox"/></td><td>smcm</td><td>15226165776</td><td>2013/7/5</td><td>就是短信内容</td><td>待发送</td><td><span class="label label-important" style="cursor:pointer">查看</span></td></tr>
+		<tr><td><input type="checkbox"/></td><td>smcm</td><td>15226165776</td><td>2013/7/5</td><td>就是短信内容</td><td>待发送</td><td><span class="label label-important" style="cursor:pointer">查看</span></td></tr>
+		<tr><td><input type="checkbox"/></td><td>smcm</td><td>15226165776</td><td>2013/7/5</td><td>就是短信内容</td><td>待发送</td><td><span class="label label-important" style="cursor:pointer">查看</span></td></tr>
+		<tr><td><input type="checkbox"/></td><td>smcm</td><td>15226165776</td><td>2013/7/5</td><td>就是短信内容</td><td>待发送</td><td><span class="label label-important" style="cursor:pointer">查看</span></td></tr>
+		<tr><td><input type="checkbox"/></td><td>smcm</td><td>15226165776</td><td>2013/7/5</td><td>就是短信内容</td><td>待发送</td><td><span class="label label-important" style="cursor:pointer">查看</span></td></tr>
+	</tbody>
+</table>
+
+<div class="pagination" style="float:right">
+	<ul>
+		<li><a href="#">Prev</a></li>
+		<li><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+		<li><a href="#">Next</a></li>
+	</ul>
+</div>

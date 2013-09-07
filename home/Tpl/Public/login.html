@@ -1,0 +1,123 @@
+<include file="Public:head"/>
+<script src="__PUBLIC__/js/bootstrap/extends/bootstrap-switch.min.js"></script>
+<link rel="stylesheet" href="__PUBLIC__/css/login.css">
+<link rel="stylesheet" href="__PUBLIC__/js/bootstrap/extends/bootstrap-switch.css">
+<style>
+.input-login {
+	width: 288px;
+	height: 52px;
+	margin-bottom: 3px;
+	background: url(/img/icon/startpage-0410.$6008.png) no-repeat -210px -52px;
+	_background-image: url(/img/icon/startpage-0410-ie6.$6008.png);
+	position: relative;
+	margin-right: 5px;
+}
+</style>
+<div class="row-fluid">
+	<div class="logo_form">
+		
+		    <img src="__PUBLIC__/images/small_logo.png" alt="logo" style="margin-top:20px;">
+			<!-- Button to trigger modal -->
+			<!-- Modal -->
+			<div id="login" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel"><center><img src="__PUBLIC__/images/small_logo_floor.png" alt="logo" style="margin-top:20px;"></center></h3>
+			  </div>
+			  
+			  <div class="modal-body">
+				<p style="text-align:center"><span>无需注册，只管登录</span><span id="login_error" class="label label-important" style="float:right;z-index:99999;margin:3px 10px auto auto;"></span></p>
+				<form class="form-inline">
+				  <center><input type="email" class="input-login" style="width: 288px;border:0px;height: 45px;position:absolute;vertical-align:middle;margin: 0 0 20px;background:#F0F0F0;position: relative;"
+	 placeholder="Email" id="account"  ></center>
+
+				  <center><input type="password" class="input-login" style="width: 288px;border:0px;height: 45px;position:absolute;vertical-align:middle;margin: 0 0 20px;background:#F0F0F0;position: relative;" placeholder="Password" id="password" ></center>
+				  
+				  <div class="login_info" style="width:288px;margin-left:20%">
+					  
+					  <span style="font-size:16px;">记住密码</span>
+					  <div class="make-switch switch-small">
+						<input type="checkbox" checked>
+					  </div>
+					  <span style="font-size:16px;margin-left:30px"><a href="" >忘记密码</a></span>
+				  </div>
+				 
+				</form>
+			  </div>
+			  <div class="modal-footer">
+				<center><button class="btn btn-danger hide" id="reset" status="0" data-dismiss="modal" aria-hidden="true" style="width:150px;height:50px;font-size:28px;">取消</button><button type="submit" id="loginSubmit" status="0" class="btn btn-primary" style="width:300px;height:50px;font-size:28px;">立即登录</button></center>
+			  </div>
+			</div>
+	</div>
+	
+</div>
+<div class="row-fluid" style="align:center">
+		<center><a href="#login" role="button" data-toggle="modal"><img src="__PUBLIC__/images/login_logo.png"  style="padding-top:20px;"></a></center>
+</div>
+<script>
+document.onkeydown = function(e){
+    var ev = document.all ? window.event : e;
+    if(ev.keyCode==13) {  
+		
+        login();
+    }
+}
+function login(){
+	var $statusLogin = $('#loginSubmit').attr("status");
+		
+
+	if($statusLogin == 0){
+		var account = $('#account').val();
+		
+		var password = $('#password').val();
+		if(!checkEmail(account)){
+			$('#login_error').html('亲，这不是邮箱~');
+			return;
+		}
+		if(password == ''){
+			$('#login_error').html('亲，给个密码~');
+			return;
+		}
+		$.getJSON('{:U("Public/login")}',{account:account,password:password},function(data){
+		
+		  if(data.status == 1){
+			 //alert(data.info);
+			 //$("div").remove('#login');
+			 $('#loginSubmit').css('width','150px');
+			 $('.modal-body').html(data.info);
+			 $('#loginSubmit').html('满十八进');
+			 $('#reset').html("长大再来");
+			 $('#reset').removeClass("hide");
+			 $('#reset').attr("status",1);
+			 $('#loginSubmit').attr("status",1);
+			 $('#reset').attr("status",1);
+		  }else if(data.status == 2){
+			    // already have account
+				window.location.href="__APP__/";
+		  }else{
+			 $('#login_error').html('账号和密码错误~');//如果是input或者textarea 使用$('#fat-btn').val();
+		  }
+	   }); 
+	 }else if($statusLogin == 1){
+		window.location.href="__APP__/";///?backurl="+window.location.href;
+	 }
+}
+$('#loginSubmit').click(function () {
+        //var btn = $(this);
+        //btn.button('登录中');
+		login();
+});
+$('#reset').click(function () {
+	var $statusReset = $('#reset').attr("status");
+	if($statusReset == 0){
+	
+	
+	}else{
+		//关闭浏览器
+		window.opener=null;
+		window.open('','_self');
+		window.close();
+	}
+});
+</script>
+<include file="Public:foot"/>

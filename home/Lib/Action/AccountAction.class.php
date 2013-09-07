@@ -1,0 +1,94 @@
+<?php
+// 本类由系统自动生成，仅供测试用途
+class AccountAction extends Action {
+	private $_uid = '';
+	public function _initialize(){
+		$this->_uid = session('uid');
+		$data = array(
+			''	
+		);
+		if(!$this->_uid) $this->redirect('Public/login');
+		//B('Authenticate', $action);
+	}
+    public function index(){
+		
+		$this->display();
+    }
+	//账号信息查看与修改
+	public function accountInfo(){
+		$Account = M('Account');
+		$uid = $this->_uid;
+		if($_GET['company_name'] == ''){
+			$data = $Account->where("uid = $uid")->find();
+			if(empty($data)){
+				$this->ajaxReturn(0,"未查到账号信息，请输入。",0);
+			}else{
+				$this->ajaxReturn($data,"查询到用户的账号信息如下",1);
+			}
+		}else{
+			
+			$data = $Account->where('uid = $this->_uid')->find();
+			$result = array(
+				'account' => $data['account'],
+				'company_name' => $data['company_name'],
+				'company_contacter' => $data['company_contacter'],
+				'contact_telphone' => $data['contact_telphone'],
+				'contact_mobilephone' => $data['contact_mobilephone'],
+				'industry' => $data['industry'],
+				'customer_manager' => $data['customer_manager'],
+				'company_fax' => $data['company_fax'],
+				'zip_code' => $data['zip_code'],
+				'email' => $data['email'],
+				'company_address' => $data['company_address'],
+			);
+			if(empty($data)){
+				$this->ajaxReturn(0,"未查到账号信息，请输入。",0);
+			}else{
+				$this->ajaxReturn($result,"查询到用户的账号信息如下",1);
+			}
+		}	
+	}
+	//修改密码
+	public function resetPassword(){
+		$get = $this->_get();
+		$uid = session('uid');
+		if(!$uid) $this->redirect('Public:login');
+		$Account = M('Account');
+		if($get['password']==''){
+			$this->error("请输入密码");
+		}else if($get['password'] != $get['repassword']){
+			$this->error("两次输入的密码不对!");			
+		}else{
+			
+			$data = array(
+					'uid'      => $uid,
+					'password' => $get['password']
+			);
+			$Account->save($data);
+		}
+	}
+	//公司签名修改
+	public function signatureEdit(){
+		$get = $this->_get();
+		$Account = M('Account');
+		if($get['signature']==''){
+			$this->ajaxReturn(0,"请输入密码",0);
+		}else{
+			if(strlen($get['signature'] > 20)) $this->ajaxReturn(0,"签名不能超过20个字符",0);
+			$data = array(
+					'uid'      => $uid,
+					'company_signature' => $get['signature']
+			);
+			$v = $Account->save($data);
+			if($v){
+				$this->ajaxReturn(0,"更新签名失败",0);
+			}else{
+				$this->ajaxReturn(1,"更新签名成功",1);
+			}
+					
+		}
+	
+	}
+
+
+}

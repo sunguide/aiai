@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+
+		<script src="__PUBLIC__/js/jquery/jquery-extends-lsx.js"></script>
+		<script src="__PUBLIC__/js/common/common_func.js"></script>
+    <!-- Le styles -->
+		<link rel="stylesheet" href="__PUBLIC__/js/bootstrap/css/bootstrap.min.css">
+
+		<link rel="stylesheet" href="__PUBLIC__/js/bootstrap/css/bootstrap-responsive.min.css">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+		body {
+			padding-top: 60px;
+			padding-bottom: 40px;
+			background-color: #f5f5f5;
+		}
+
+		.form-signin {
+			max-width: 400px;
+			padding: 19px 29px 29px;
+			margin: 0 auto 20px;
+			background-color: #fff;
+			border: 1px solid #e5e5e5;
+			-webkit-border-radius: 5px;
+			   -moz-border-radius: 5px;
+					border-radius: 5px;
+			-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+			   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+					box-shadow: 0 1px 2px rgba(0,0,0,.05);
+		}
+		.form-signin .form-signin-heading,
+		.form-signin .checkbox {
+			margin-bottom: 10px;
+		}
+		.form-signin input[type="text"],
+		.form-signin input[type="password"] {
+			font-size: 16px;
+			height: auto;
+			margin-bottom: 15px;
+			padding: 7px 9px;
+		}
+		.wukong {
+			margin-top:30px;
+			padding-top:10px;
+			border-top:1px solid #e5e5e5;		
+		}
+
+    </style>
+
+  <body>
+
+    <div class="container">
+
+      <form action="" method="post" class="form-signin" onsubmit="return false;">
+		<fieldset>
+			<legend><h3>管理员登录<small> - 十目短信平台</small></h3></legend>					
+			<include file="Public:alert" />
+			用户名：<input type="text" name="account" class="text-input" placeholder="用户名"/><br/>
+			密 &nbsp;&nbsp; 码：<input type="password" name="password" class="text-input" placeholder="密码"/>
+			<br/>
+			<label class="checkbox"><input type="checkbox" name="autologin"/> 三日内自动登陆</label>
+			<input name="submit" class="btn btn-primary" type="submit" value="登录" onclick="login('__APP__/Public/login','__APP__/Index'); "/> &nbsp; <a href="">忘记密码</a>
+			</fieldset>
+			<div class="row-fluid wukong">
+				<div class="span3"><img src="__PUBLIC__/img/logo.gif" width="250" alt="logo" style="margin-top:10px"/></div>
+				<div class="span9">
+					<p>郑州十目 &copy; 传媒有限公司 2013</p>
+					<p><small>
+						<a href="">使用帮助</a>
+						<span class="muted">&middot;</span>
+						<a href="">技术支持</a>
+						<span class="muted">&middot;</span>
+						<a href="">联系我们</a>
+					</small></p>
+				</div>
+			</div>
+      </form>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+		<script src="__PUBLIC__/js/jquery/jquery-1.8.2.js"></script>
+		<script src="__PUBLIC__/js/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

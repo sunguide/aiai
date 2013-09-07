@@ -1,0 +1,76 @@
+<include file="Public:head"/>
+<include file="Public:head_nav"/>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+	<div class="span1"></div>
+	<div class="span8 main">
+		
+			 <section id="publish">
+			 <div class="page-header">
+				   <h1>发布文章</h1>
+			 </div>
+				<form class="form-horizontal" action="__URL__/commentAdd" method="post">
+				   <div class="control-group">
+					  <label class="control-label" for="name">文章标题</label>
+					  <div class="controls">
+						<input type="text" name="name" placeholder="输入姓名" /><span> 这是必须的哦！</span>
+					  </div>
+				   </div>
+				   <div class="control-group">
+					  <label class="control-label" for="content">内容</label>
+					<div class="controls">
+					<!---kind编辑器-->
+					<textarea id="editor_id" name="content" class="textarea">
+						</textarea>
+					<script charset="utf-8" src="__PUBLIC__/js/kindeditor/kindeditor.js"></script>
+					<script charset="utf-8" src="__PUBLIC__/js/kindeditorlang/zh_CN.js"></script>
+					<script>
+						 var editor;
+						 KindEditor.ready(function(K) {
+						  editor = K.create('#editor_id',{
+							items:['preview','fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', '|', 'image', 'multiimage','flash', 'media', 'insertfile',  'hr', 'emoticons', 'link', 'unlink']
+							});
+						});
+						// 取得HTML内容
+						html = editor.html();
+						editor.sync();
+						</script>
+					<!---kind编辑器-->
+					</div>
+				 </div>
+
+				<div class="control-group">
+					<div class="controls">
+					<label class="checkbox">
+						<input type="checkbox" name="know">认识我└(^o^)┘
+					</label>
+					<hr>
+					<button type="submit" class="btn btn-large btn-primary">&nbsp;&nbsp;提&nbsp;&nbsp;&nbsp;&nbsp;交&nbsp;&nbsp;</button>
+					</div>
+				</div>
+				</form>
+			</section>
+		
+	</div>
+    <div class="span3">
+		<ul class="nav nav-list bs-docs-sidenav">
+          <li class=""><a href="#dropdowns"><i class="icon-chevron-right"></i> 下拉菜单</a></li>
+          <li class=""><a href="#buttonGroups"><i class="icon-chevron-right"></i> 按钮组</a></li>
+          <li class=""><a href="#buttonDropdowns"><i class="icon-chevron-right"></i> 按钮下拉菜单</a></li>
+          <li class="active"><a href="#navs"><i class="icon-chevron-right"></i> 导航</a></li>
+          <li class=""><a href="#navbar"><i class="icon-chevron-right"></i> 导航条</a></li>
+          <li><a href="#breadcrumbs"><i class="icon-chevron-right"></i> 面包屑</a></li>
+          <li><a href="#pagination"><i class="icon-chevron-right"></i> 分页</a></li>
+          <li><a href="#labels-badges"><i class="icon-chevron-right"></i> 标签与徽章</a></li>
+          <li><a href="#typography"><i class="icon-chevron-right"></i> 排版</a></li>
+          <li><a href="#thumbnails"><i class="icon-chevron-right"></i> 缩略图</a></li>
+          <li><a href="#alerts"><i class="icon-chevron-right"></i> 警告框</a></li>
+          <li><a href="#progress"><i class="icon-chevron-right"></i> 进度条</a></li>
+          <li><a href="#media"><i class="icon-chevron-right"></i> 媒体对象</a></li>
+          <li><a href="#misc"><i class="icon-chevron-right"></i> Misc</a></li>
+        </ul>
+	</div>
+   <div>
+</div>
+<include file="Public:foot">

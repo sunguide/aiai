@@ -1,0 +1,16 @@
+<include file="Public:head"/>
+<link rel="stylesheet" href="__PUBLIC__/css/login.css">
+<div class="login">
+	<div class="logo" style="background:url('__PUBLIC__/img/login_logo.jpg') no-repeat"></div>
+	<div class="logo_form">
+		<h1 align=center>{$Think.lang.netname}</h1>
+		<form action="__URL__/reg" method="post">
+			<table align=center cellpadding="5">
+				<tr><td width=50>{$Think.lang.username}:</td><td><input type="text" name="account" placeholder="{$Think.lang.remind_username}"></td></tr>
+				<tr><td width=50>{$Think.lang.password}:</td><td><input type="password" name="password" placeholder="{$Think.lang.remind_password}"></td></tr>
+				<tr><td colspan="2" align=center><input type="submit" class="btn" value="{$Think.lang.login}" style="width:150px;"></td></tr>
+			</table>
+		</form>
+	</div>
+</div>
+<include file="Public:foot"/>

@@ -1,0 +1,4 @@
+.login{width:85%;height:400px;margin:auto;margin-top:120px;}
+.login .logo{height:85%;width:60%;float:left}
+.login .logo_form{border:1px solid green;width:35%;height:80%;float:right;}
+.login .logo_form table{margin-top:55px;}

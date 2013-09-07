@@ -1,0 +1,21 @@
+
+
+
+jQuery.extend({
+	
+
+    warn: function(meg)
+	{
+		var html="<div class='modal modal-warn' style='display:none'><div class='modal-header'><button aria-hidden='true' data-dismiss='modal' class='close' type='button' onclick='$(\".modal\").fadeOut(500);clearDynamicHtml();'>×</button><h3>警告</h3></div><div class='modal-body'> <p>"+meg+"</p></div><div class='modal-footer'><a class='btn' id='close' onclick='$(\".modal\").fadeOut(500);'>关闭</a></div></div>";
+
+		$("#dynamic-html").append(html);
+		$(".modal-warn").fadeIn(500);
+    },
+	table:function(title)
+	{
+		var html="<div class='modal modal-table' style='display:none;height:530px;'><div class='modal-header'><button aria-hidden='true' data-dismiss='modal' class='close' type='button' onclick='$(\".modal\").fadeOut(500);'>×</button><h3>"+title+"</h3></div><div class='modal-body' style='max-height:460px'><include file='Public:holiday_menu'/></div></div>";
+
+		$("#dynamic-html").append(html);
+		$(".modal-table").fadeIn(500);
+	}
+})

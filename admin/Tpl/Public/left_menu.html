@@ -1,0 +1,45 @@
+<div class="bs-docs-sidebar" style="float:left">
+	<ul class="nav nav-list bs-docs-sidenav affix-top parent-menu">
+	 <li id="li-one" class=""><a href="#Msg"><i class="icon-chevron-right"></i><span>{$Think.lang.message}</span></a></li>
+		<div style="height:190px;margin-top:-30px;display:none" class="child-menu" id="one">
+			<ul class="nav nav-list bs-docs-sidenav affix-top">
+				  <li><a href="#Msg#waitCheckMsg" onclick="_MP('__APP__/Index/waitCheckMsg',getName('parent-menu #li-one a span'),id)" id="waitCheckMsg"><i class="icon-chevron-right"></i><span>待审核短信</span></a></li>
+				  <li><a href="#Msg#alreadyCheckMsg" onclick="_MP('__APP__/Index/alreadyCheckMsg',getName('parent-menu #li-one a span'),id);" id="alreadyCheckMsg"><i class="icon-chevron-right"></i><span>已审核短信</span></a></li>
+				  <li><a href="#sendMeg#waitSendMsg" onclick="_MP('__APP__/Index/waitSendMsg',getName('parent-menu #li-one a span'),id);" id="waitSendMsg"><i class="icon-chevron-right"></i><span>待发送短信<span></a></li>
+				  <li><a href="#sendMeg#alreadySendMsg" onclick="_MP('__APP__/Index/alreadySendMsg',getName('parent-menu #li-one a span'),id);" id="alreadySendMsg"><i class="icon-chevron-right"></i><span>已发送短信</span></a></li>
+				  <li><a href="javascript:void(0)"><i class="icon-chevron-right"></i><span>黑字典</span></a></li>
+			</ul>
+		</div>
+	  <li id="li-three" class=""><a href="#Account"><i class="icon-chevron-right"></i><span>{$Think.lang.accout}</span></a></li>
+		<div style="height:152px;margin-top:-30px;display:none" class="child-menu" id="three">
+			<ul class="nav nav-list bs-docs-sidenav affix-top">
+				  <li><a href="#Account#accountManage" onclick="_MP('__APP__/Account/accountManage',getName('parent-menu #li-three a span'),id);" id="accountManage"><i class="icon-chevron-right"></i><span>账户管理</span></a></li>
+				  <li><a href="#Account#charger" onclick="_MP('__APP__/Index/chargeSignature',getName('parent-menu #li-three a span'),id);" id="chargeSignature"><i class="icon-chevron-right"></i><span>充值记录</span></a></li>
+				  <li><a href="#Account#consume" onclick="_MP('__APP__/Index/consumeSignature',getName('parent-menu #li-three a span'),id);" id="consumeSignature"><i class="icon-chevron-right"></i><span>消费记录</span></a></li>
+				  <li><a href="#Log#loginLogRecords" onclick="_MP('__APP__/Log/loginLogRecords',getName('parent-menu #li-three a span'),id);" id="loginLogRecords"><i class="icon-chevron-right"></i><span>登录日志</span></a></li>
+			</ul>
+		</div>
+	  <li id="li-four" class=""><a href="#Tools"><i class="icon-chevron-right"></i><span>{$Think.lang.tools}</span></a></li>
+		<div style="height:40px;margin-top:-30px;display:none" class="child-menu" id="four">
+			<ul class="nav nav-list bs-docs-sidenav affix-top">
+				 <li><a href="#Tools#checkMobile" onclick="_MP('__APP__/Tools/checkMobile',getName('parent-menu #li-four a span'),id);" id="checkmobile"><i class="icon-chevron-right"></i><span>{$Think.lang.checkmobile}</span></a></li>
+			</ul>
+		</div>
+	  <li id="li-two" class=""><a href="#System"><i class="icon-chevron-right"></i><span>系统管理</span></a></li>
+		<div style="height:118px;margin-top:-30px;display:none" class="child-menu" id="two">
+			<ul class="nav nav-list bs-docs-sidenav affix-top">
+				  <li><a href="#System#setRoadOne" onclick="_MP('__APP__/Index/setRoadOne',getName('parent-menu #li-three a span'),id);" id="setRoadOne"><i class="icon-chevron-right"></i><span>通道1设置</span></a></li>
+				  <li><a href="#System#setRoadTwo" onclick="_MP('__APP__/Index/setRoadTwo',getName('parent-menu #li-three a span'),id);" id="setRoadTwo"><i class="icon-chevron-right"></i><span>通道2设置</span></a></li>
+				  <li><a href="#System#setRoadThr" onclick="_MP('__APP__/Index/setRoadThr',getName('parent-menu #li-three a span'),id);" id="setRoadThr"><i class="icon-chevron-right"></i><span>通道3设置</span></a></li>
+				  <li><a href="#System#roadSetting" onclick="_MP('__APP__/Index/roadSetting',getName('parent-menu #li-three a span'),id);" id="roadSetting"><i class="icon-chevron-right"></i><span>卡发及通道设置</span></a></li>
+			</ul>
+		</div>
+	</ul>
+</div>
+<script>
+	//调出子菜单
+	dis_menu("li-one","one",500,getName("parent-menu #li-one a span"));
+	dis_menu("li-two","two",500,getName("parent-menu #li-two a span"));
+	dis_menu("li-three","three",500,getName("parent-menu #li-three a span"));
+	dis_menu("li-four","four",50,getName("parent-menu #li-four a span"));
+</script>

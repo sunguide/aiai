@@ -1,0 +1,113 @@
+<include file="Public:head"/>
+<!-- <include file="Public:head_nav"/> -->
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3">
+		<include file="Public:left_nav" />
+	</div>
+	
+	<div class="span9 main">
+		<section id="publish">
+		  <div class="row-fluid">
+			<div class="span4">
+			  <a href="#" class="thumbnail"><img alt="" src="__PUBLIC__/images/b/p{$list.position_image}.png"></a>
+			  
+		    </div>
+			<div class="span8">
+				<div class="page-header">
+				   <h2>{$list.article_title}</h2> 又名:杀生，地方 <span class="badge badge-info">123232</span>学习<span class="badge badge-important">1234</span>想试<span class="badge badge-success">343</span>已试 
+			    </div>
+
+			</div>
+		  </div>
+		</section>
+		<section>
+			<div class="page-header" style="color:#3CB371">
+				<div>
+					<h3>动作说明</h3>
+					<div class="block">
+						<p>{$list.action_description}</p>
+					</div>
+				</div>
+				<div>
+					<h3>难易指数:{$list.difficulty_index}分</h3>
+					<div class="block">
+						<p>{$list.diffculty_description}</p>
+					</div>
+				</div>
+				<div>
+					<h3>快感指数:{$list.pleasure_index}分</h3>
+					<div class="block">
+						<p>{$list.pleasure_description}</p>
+					</div>
+				</div>
+				<div>
+					<h3>养眼指数:{$list.eyeful_index}分</h3>
+					<div class="block">
+						<p>{$list.eyeful_description}</p>
+					</div>
+				</div>
+				<div>
+					<h3>养生指数:{$list.health_index}分</h3>
+					<div class="block">
+						<p>{$list.health_description}</p>
+					</div>
+				</div>
+				
+			<div>
+			<div class="row-fluid">
+			   <div class="span9">
+			    <textarea class="span12" onclick="this.innerHTML='';">使用心得与感言！</textarea>
+			   </div>
+				<div class="span3">
+						<a href="#" class="btn btn-primary btn-large span10">提交</a>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<ul class="list">
+					<li class="feel-select" onclick="vote(1)">
+					
+					  <input tabindex="1" type="radio" id="input-1" name="demo-radio">
+					  <label class="label label-info" for="input-1" >糟透了</label>
+					 
+					  
+					</li>
+					<li class="feel-select" onclick="vote(2)">
+					  <input tabindex="2" type="radio" id="input-2" name="demo-radio">
+					  <label class="label label-info" for="input-2" >没感觉</label>
+					  
+					</li>
+					<li class="feel-select" onclick="vote(3)">
+					  <input tabindex="3" type="radio" id="input-3" name="demo-radio">
+					  <label class="label label-info" for="input-3">舒服</label>
+					 
+					</li>
+					<li class="feel-select" onclick="vote(4)">
+					  <input tabindex="4" type="radio" id="input-4" name="demo-radio">
+					  <label class="label label-info" for="input-4">再来一次</label>
+					  
+					</li>
+					<li class="feel-select" onclick="vote(5)">
+					  <input tabindex="5" type="radio" id="input-5" name="demo-radio">
+					  <label class="label label-info" for="input-5">爽死了</label>
+					  
+					</li>
+			      </ul>
+			   
+			   
+			</div>
+		  </div>
+		</section>
+	</div>
+   
+  <div>
+</div>
+<script>
+	function vote(id){
+		alert(id);
+	}
+</script>
+     
+
+<include file="Public:foot">

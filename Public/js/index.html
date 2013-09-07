@@ -1,0 +1,30 @@
+<html>
+<head>
+<link rel="stylesheet"  href="./bootstrap/css/bootstrap.css">
+<script src="http://cdnjs.bootcss.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<button type="button" id="fat-btn" class="btn btn-primary" data-loading-text="Loading...">Loading state</button>
+<script>
+  // button state demo
+    $('#fat-btn').click(function () {
+        var btn = $(this);
+        btn.button('loading');
+		$.getJSON('http://127.0.0.1/SMS/index.php/Index/test',{id:1,name:'china'},function(data){
+		 alert(data.info);
+		 if(data.status == 1){
+		    btn.button('reset');
+		 }else{
+			
+			$('#fat-btn').html('加载失败');//如果是input或者textarea 使用$('#fat-btn').val();
+		 }
+		}); 
+			
+         
+      
+      });
+
+</script>
+</body>
+</html>

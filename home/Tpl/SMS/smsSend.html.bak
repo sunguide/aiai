@@ -1,0 +1,5 @@
+<form action="__URL__/importFile" type="post" enctype="multipart/form-data">
+输入号码<input type="text"></input>
+文本导入<input name="file" type="file"><br>
+<input type="submit"/>
+</form>

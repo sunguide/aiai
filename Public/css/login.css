@@ -1,0 +1,10 @@
+body {
+	/**  background:url('../images/bg.png') repeat; */
+	background:#3CB371;
+}
+.logo_form {
+	display:block;
+    width:200px; 
+	margin:20px auto;
+	
+}

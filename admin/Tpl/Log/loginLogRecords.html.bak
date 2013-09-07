@@ -1,0 +1,51 @@
+<style>
+	table tr td {
+		text-align:center;
+	}
+</style>
+    <form class="form-search" action="" method="post" onsubmit="return false;">
+		登录时间:<input type="text" name="startdate" id="start"/>&nbsp;&nbsp;至&nbsp;&nbsp;<input type="text" name="enddate" id="end"/>公司名称:<input type="text" class="input-medium search-query" name="company_name"><button type="submit" class="btn" onclick="loginLogSearch('__APP__/Log/loginLogRecords');">搜索</button>
+    </form>
+<table class="table table-bordered table-striped table-hover">
+	<thead><tr><td>公司名称</td><td>公司联系人</td><td>登陆地区</td><td>登录日期</td><td>登录IP</td><td>浏览器</td><td>操作系统</td></tr></thead>
+	<tbody>
+		<volist name="list" id="vo">
+			<tr>
+				<td>{$vo.company_name}</td>
+				<td>{$vo.company_contacter}</td>
+				<td><if condition="$vo.region eq ''">{$vo.country}<else />{$vo.country}-{$vo.region}</if></td>
+				<td>{$vo.login_time}</td>
+				<td>{$vo.ip}</td>
+				<td>{$vo.browser}</td>
+				<td>{$vo.os}</td>
+			</tr>
+		</volist>
+	</tbody>
+</table>
+
+<div class="pagination" style="float:right">
+	<ul>
+		<li><a href="#">Prev</a></li>
+		<li><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+		<li><a href="#">Next</a></li>
+	</ul>
+</div>
+<script>
+    //日期选择框
+	datepickerRange('start','end');
+	//搜索
+	function loginLogSearch(url){
+//		alert(getInputValueByName('startdate')+"-"+getInputValueByName('enddate')+"-"+getInputValueByName('company_name'));
+		$.post(url,{startdate:getInputValueByName('startdate'),enddate:getInputValueByName('enddate'),company_name:getInputValueByName('company_name')},function(json){
+			if(json.status == 1){
+				$.remind('提示',json.info);
+			}else{
+				$.warn("错误提示",json.info);
+			}
+		});
+	}
+</script>
