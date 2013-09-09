@@ -1,7 +1,7 @@
 <?php
 return array(
-	'welcome'=>'郑州十目传媒短信平台',
-	'netname'=>'十目短信平台',
+	'welcome'=>'爱爱|带给你不一样的感觉！',
+	'netname'=>'爱爱让生活更美好！',
 	'username'=>'账号',
 	'password'=>'密码',
 	'login'=>'登陆',

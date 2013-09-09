@@ -56,7 +56,7 @@
 		$.post('{:U("Position/getPosition")}',{id:pid},function(json){
 			 //alert(json.info);
 			 if(json.status == 1){
-				$('#myModalLabel').html(json.data.article_title);
+				$('#myModalLabel').html(json.data.position_title);
 				$('#modal-body').html(json.data.content);
 			 }else{
 				$('#modal-body').html(json.info);//如果是input或者textarea 使用$('#fat-btn').val();

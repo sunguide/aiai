@@ -22,8 +22,8 @@
 			 </div>
 				<form class="form-horizontal"id="publishPosition" method="post">
 					<div class="row-fluid">
-						<img class="span6" src="__PUBLIC__/images/b/p{$list.position_image}.png" />	
-						<input type="hidden"  name="position_image"  id="position_image" value="abcde" required />
+						<img class="span6" src="__PUBLIC__/images/b/p{$list}.png" />	
+						<input type="hidden"  name="position_image"  id="position_image" value="{$list}" required />
 					</div>
 				    <hr />
 					<input type="text" class="span6" name="position_title" id="position_title" placeholder="输入标题" required />
@@ -51,7 +51,7 @@
 						</p>
 					</div>
 					<hr>
-					<textarea rows="3" class="span6" name="difficulty_description" id="dififculty_description" placeholder="难度说明" required></textarea>
+					<textarea rows="3" class="span6" name="difficulty_description" id="difficulty_description" placeholder="难度说明" required></textarea>
 					<hr>
 					<div class="user_rate">快感指数：
 						<div class="big_rate_bak">
@@ -142,7 +142,7 @@
 		var s2 = $('#s2').html()
 		var s3 = $('#s3').html()
 		var s4 = $('#s4').html()
-		alert(s1);
+		
 		 //alert(s1+s2+s3+s4);
 		 if(s1 && s2 && s3 && s4 && position_title!='' && position_image!='' && action_description!='' && difficulty_description!='' && pleasure_description!='' && eyeful_description!='' && health_description!=''){
 					var s11 = $('#s1').html()
@@ -153,7 +153,7 @@
 					$('#pleasure_index').val(s22);
 					$('#eyeful_index').val(s33);
 					$('#health_index').val(s44);
-		   alert(position_title + position_image+action_description+diffculty_description+pleasure_description+eyeful_description+health_description+s1+s2+s3+s4);
+		   alert(position_title + position_image+action_description+difficulty_description+pleasure_description+eyeful_description+health_description+s1+s2+s3+s4);
 		   $('#publishPosition').ajaxSubmit({
 				url: "__URL__/publish",
 				dataType: "text",
@@ -179,6 +179,9 @@
 		   */
 			
 		 
+		 }else{
+			 alert(position_title + position_image+action_description+diffculty_description+pleasure_description+eyeful_description+health_description+s1+s2+s3+s4);
+		
 		 }
 		
          

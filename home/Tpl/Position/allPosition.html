@@ -19,8 +19,8 @@
 		$.post('{:U("Position/getPosition")}',{id:pid},function(json){
 			 //alert(json.info);
 			 if(json.status == 1){
-				$.warn(json.data.article_title,json.data.action_description);
-				//$('#myModalLabel').html(json.data.article_title);
+				$.warn(json.data.position_title,json.data.action_description);
+				//$('#myModalLabel').html(json.data.position_title);
 				//$('#position_image').attr('src','__PUBLIC__/images/b/p'+json.data.position_image+'.png');
 				
 			 }else{
