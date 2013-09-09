@@ -60,10 +60,25 @@
 				
 			<div>
 			<div class="row-fluid">
-			   <div class="span8" style="margin-left:5px" >
-			    <textarea class="span12" onclick="this.innerHTML='';" id="feel_content">使用心得与感言！</textarea>
+			  <!-- 
+			   <div class="span8" style="margin-left:5px">
+				  <textarea class="span12" onclick="this.innerHTML='';" id="feel_content">使用心得与感言！</textarea>
 			   </div>
-				
+			   -->
+				<!-- Duoshuo Comment BEGIN -->
+				<div class="ds-thread"></div>
+				<script type="text/javascript">
+				    var duoshuoQuery = {short_name:"imaiai"};
+					(function() {
+						var ds = document.createElement('script');
+						ds.type = 'text/javascript';ds.async = true;
+						ds.src = 'http://static.duoshuo.com/embed.js';
+						ds.charset = 'UTF-8';
+						(document.getElementsByTagName('head')[0] 
+						|| document.getElementsByTagName('body')[0]).appendChild(ds);
+					})();
+				</script>
+				<!-- Duoshuo Comment END -->
 			</div>
 			<div class="row-fluid">
 				<div class="list span5" style="height:40px">
@@ -89,9 +104,11 @@
 						</li>
 				   </ul>
 			   </div>
-			   <div  class="span4" style="padding-top:5px;float:left">
-						<a class="btn btn-primary btn-large span10" id="feel" onclick="feel()">提交</a>
-			   </div>
+			   <!---
+				   <div class="span4" style="padding-top:5px;float:left">
+							<a class="btn btn-primary btn-large span10" id="feel" onclick="feel()">提交</a>
+				   </div>
+			   -->
 			</div>
 		  </div>
 		</section>
@@ -193,4 +210,4 @@
 </script>
      
 
-<include file="Public:foot">
+<include file="Public:foot" />

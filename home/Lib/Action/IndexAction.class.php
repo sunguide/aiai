@@ -7,7 +7,7 @@ class IndexAction extends Action {
 		$data = array(
 			''	
 		);
-		if(!$this->_uid) $this->redirect('Public/login');
+		//if(!$this->_uid) $this->redirect('Public/login');
 		//B('Authenticate', $action);
 	}
     public function index(){
