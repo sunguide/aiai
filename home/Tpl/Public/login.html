@@ -93,13 +93,13 @@ function login(){
 			 $('#reset').attr("status",1);
 		  }else if(data.status == 2){
 			    // already have account
-				window.location.href="__APP__/";
+				window.location.href="__APP__";
 		  }else{
 			 $('#login_error').html('账号和密码错误~');//如果是input或者textarea 使用$('#fat-btn').val();
 		  }
 	   }); 
 	 }else if($statusLogin == 1){
-		window.location.href="__APP__/";///?backurl="+window.location.href;
+		window.location.href="__APP__";///?backurl="+window.location.href;
 	 }
 }
 $('#loginSubmit').click(function () {
