@@ -9,7 +9,7 @@
 		'DB_PORT'=>'3306',
 		'DB_NAME'=>'aiai',
 		'DB_USER'=>'root',
-		'DB_PWD'=>'root',
+		'DB_PWD'=>'woshinilao8',
 		'DB_PREFIX'=>'aiai_',
 		'URL_ROUTER_ON'   => true, //开启路由
 		'URL_ROUTE_RULES' => array( //定义路由规则
