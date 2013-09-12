@@ -9,7 +9,7 @@
 	<ul class="parent-menu menu ">
 		<li class="" id="li-one"><a href="__APP__/Position/category"><i class="icon-chevron-right"></i><span>分类查看</span></a></li>
 		<li class="" id="li-two"><a href="__APP__/Position/allPosition"><i class="icon-chevron-right"></i><span>所有姿势</span></a></li>
-		<php>if(session('uid')){
+		<php>if(session('uid')||cookie('uid')){
 		echo '
 			<li class="" id="li-two"><a href="__APP__/Position/nodo"><i class="icon-chevron-right"></i><span>未尝试的</span></a></li>	
 			<li class="" id="li-two"><a href="__APP__/Position/havedone"><i class="icon-chevron-right"></i><span>已尝试的</span></a></li>	

@@ -4,6 +4,7 @@ class AccountAction extends Action {
 	private $_uid = '';
 	public function _initialize(){
 		$this->_uid = session('uid');
+		if(!$this->_uid) $this->_uid = cookie('uid');
 		$data = array(
 			''	
 		);

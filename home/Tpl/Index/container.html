@@ -23,7 +23,7 @@
 					</div>
 					<hr>
 					<p> 
-						<span><a href="#" id="id-{$vo.id}" onclick="favorites('{:U('Position/favorites')}','{$vo.id}');"><i class="icon-star"></i>收藏</a></span>
+						<span id="id-{$vo.id}" style="cursor:pointer" onclick="favorites('{:U('Position/favorites')}','{$vo.id}');"><i class="icon-star"></i>收藏</span>
 						<span class="right"><a href="__APP__/Position/detail/id/{$vo.id}" class="btn">查看</a></span></p>
 				  </div>
 				</div>

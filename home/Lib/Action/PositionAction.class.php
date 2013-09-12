@@ -126,25 +126,30 @@ class PositionAction extends Action {
 	public function publish(){
 		$Position = M('Position');	
 		if($_POST['position_title'] == ''){
-			$results = $Position->field('position_image')->where("article_status = 'publish'")->select();
-			//随机一个未进行详细说明的姿势
-			$flag = 1;
-			$positionImage = 0;
-			while($flag){
-				$rand = rand(1,106);
-				$flag1 = 0;
-				foreach($result as $v){
-					
-					if($v == $rand){
-						$flag1 = 1;
+			if($_GET['pid']){
+				$positionImage = $_GET['pid']; 
+			}else{
+				$results = $Position->field('position_image')->where("article_status = 'publish'")->select();
+				//随机一个未进行详细说明的姿势
+				$flag = 1;
+				$positionImage = 0;
+				while($flag){
+					$rand = rand(1,106);
+					$flag1 = 0;
+					foreach($result as $v){
+						
+						if($v == $rand){
+							$flag1 = 1;
+						}
 					}
+					if($flag1 == 0){
+						$positionImage = $rand;
+						break;
+					}
+					
 				}
-				if($flag1 == 0){
-					$positionImage = $rand;
-					break;
-				}
-				
 			}
+			
 			//echo $positionImage;
 
 			//echo $Position->getLastSql();

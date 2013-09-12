@@ -12,7 +12,7 @@
 				
 				if($v){
 					session('uid',$v['uid']);
-					
+					cookie('uid',$v['uid'],3600000);
 					$this->ajaxReturn(2,"登录成功",2);
 				}else{
 					$s = $Account->where("account = '{$param['account']}'")->find();
@@ -28,6 +28,7 @@
 						$v = $Account->add($data);
 						if($v){
 							session('uid',$v);
+							cookie('uid',$v,3600000);
 							$this->ajaxReturn(1,'<p>请牢记账号<span class="label label-success">'.$param['account'].'</span>和密码<span class="badge badge-info">'.$param['password'].'</span>，以便下次登录',1);
 						}else{
 							$this->ajaxReturn(0,"对不起，请重试",0);
@@ -44,6 +45,7 @@
 		}
 		public function logout(){
 			session(null);
+			cookie(null);
 			$this->redirect('Index/index');
 		}
 		public function feedback(){
