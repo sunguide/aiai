@@ -16,5 +16,9 @@ class IndexAction extends Action {
 		$this->assign('list',$data);
 		$this->display();
     }
-	
+	public function image(){
+		$s = A('Image'); 
+		
+		dump($s->showImage());
+	}
 }
