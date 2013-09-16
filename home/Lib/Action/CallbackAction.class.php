@@ -7,7 +7,7 @@ class CallbackAction extends Action {
 		import('@.ORG.Sina');
 		$sina_k='3598307079'; //新浪微博应用App Key
 		$sina_s='1c163695f54d5fabe10dd45e747d4ac4'; //新浪微博应用App Secret
-		$callback_url=U('Callback/sina'); //授权回调网址
+		$callback_url=U('Callback/sina@aiai.im'); //授权回调网址
 		if(isset($_GET['code']) && $_GET['code']!=''){
 			$o=new sinaPHP($sina_k, $sina_s);
 			$result=$o->access_token($callback_url, $_GET['code']);
@@ -27,7 +27,7 @@ class CallbackAction extends Action {
 	    import('@.ORG.QQ');
 		$qq_k='100522698'; //QQ应用APP ID
 		$qq_s='aa00efb01848d2eb17acd3bfa3f92a50'; //QQ应用APP KEY
-		$callback_url=U('Callback/qq'); //授权回调网址
+		echo $callback_url=U('Callback/qq@aiai.im'); //授权回调网址
 		if(isset($_GET['code']) && trim($_GET['code'])!=''){
 			$qq=new QQ($qq_k, $qq_s);
 			$result=$qq->access_token($callback_url, $_GET['code']);

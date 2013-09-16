@@ -75,7 +75,7 @@
 			import("@.ORG.Sina");
 			$sina_k='3598307079'; //新浪微博应用App Key
 			$sina_s='1c163695f54d5fabe10dd45e747d4ac4'; //新浪微博应用App Secret
-			$callback_url=U('Callback/sina');//授权回调网址
+			echo $callback_url=U('Callback/sina@aiai.im');//授权回调网址
 			$sina=new Sina($sina_k, $sina_s);
 			$login_url=$sina->login_url($callback_url);
 			echo '<a href="',$login_url,'">点击进入授权页面</a>';
@@ -85,7 +85,7 @@
 			import("@.ORG.QQ");
 			$qq_k='100522698'; //QQ应用APP ID
 			$qq_s='aa00efb01848d2eb17acd3bfa3f92a50'; //QQ应用APP KEY
-			$callback_url=U('Callback/sina'); //授权回调网址
+			echo $callback_url=U('Callback/qq@aiai.im'); //授权回调网址
 			$scope='get_user_info,add_share'; //权限列表，具体权限请查看官方的api文档
 			$qq=new QQ($qq_k, $qq_s);
 			$login_url=$qq->login_url($callback_url, $scope);
