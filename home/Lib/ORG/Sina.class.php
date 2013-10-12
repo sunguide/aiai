@@ -66,6 +66,9 @@ class Sina
 		if($pic!='' && is_array($pic)){
 			$url='statuses/upload';
 			$params['pic']=$pic;
+		}else if($pic !=''){
+			$url='statuses/upload_url_text';
+			$params['url']=$pic;
 		}else{
 			$url='statuses/update';
 		}

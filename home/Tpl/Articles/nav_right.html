@@ -1,0 +1,26 @@
+<div class="follow">
+	<a href="http://weibo.com/aiaiim" class="f-sina" target="_blank" title="新浪微博"></a>
+	<a href="#" class="f-weixin" title="关注“爱爱”官方微信，随时随地爱上她" target="_blank"  onmouseover="showWeixin();" onmouseout="hiddenWeixin();" onclick="return false;" ></a>
+	<script>function showWeixin(){$('#weixin').show();}function hiddenWeixin(){$('#weixin').hide();}</script>
+	<a href="http://t.qq.com/aiaiim" class="f-qq" target="_blank" title="腾讯微博"></a>
+	<!--<a href="#" class="f-rss" target="_blank" title="RSS订阅"></a>-->
+	<span style="float:left;font-size:18px;">关注我们，更多精彩！</span>
+	<img id="weixin" src="__PUBLIC__/images/mp_weixin.jpg" style="display:none;margin-top:10px;">
+</div>
+
+<div class="box box-recommended">
+	<div class="box-header">
+		<span>相关推荐</span>
+	</div>
+	<div class="box-body bg-white">
+	   <div class="recommended">
+		  <ul>
+			<volist name="relate" id="vo">
+			<li><a href="__APP__/Articles/Detail/id/{$vo.article_id}"><span>{$vo.title}<span></a></li>
+			</volist>
+		  </ul>
+	   </div>
+
+	</div>
+</div>
+{:R('Tags/hotTag',array(''),'Widget')}

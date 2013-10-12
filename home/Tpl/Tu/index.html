@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>爱爱网|有色图</title>
+<link rel='stylesheet' href='__PUBLIC__/wall/css/lanrenzhijia.css' media='screen' />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!-- styles -->
+        <link href="__PUBLIC__/js/bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <link href="__PUBLIC__/js/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+        <link href="__PUBLIC__/css/stilearn.css" rel="stylesheet" />
+
+		<link href="__PUBLIC__/css/my.css" rel="stylesheet" /><!--自定义-->
+<script src="__PUBLIC__/wall/js/blocksit.min.js"></script>
+<script>
+var count = 0;
+$(document).ready(function() {
+	
+	//vendor script
+	$('#header')
+	.css({ 'top':-50 })
+	.delay(1000)
+	.animate({'top': 0}, 800);
+
+	$('#footer')
+	.css({ 'bottom':-15 })
+	.delay(1000)
+	.animate({'bottom': 0}, 800);
+
+	//blocksit define
+	$(window).load( function() {
+		$('#container').BlocksIt({
+			numOfCol: 4,
+			offsetX: 8,
+			offsetY: 8
+		});
+	});
+
+	//window resize
+	var currentWidth = 1100;
+	$(window).resize(function() {
+		var winWidth = $(window).width();
+		var conWidth;
+		if(winWidth < 660) {
+			conWidth = 440;
+			col = 2
+		} else if(winWidth < 880) {
+			conWidth = 660;
+			col = 3
+		} else if(winWidth < 1100) {
+			conWidth = 880;
+			col = 4;
+		} else {
+			conWidth = 1100;
+			col = 5;
+		}
+
+		if(conWidth != currentWidth) {
+			currentWidth = conWidth;
+			$('#container').width(conWidth);
+			$('#container').BlocksIt({
+				numOfCol: col,
+				offsetX: 8,
+				offsetY: 8
+			});
+		}
+	});
+});
+
+//检测滑到底部，加载更多
+   window.onscroll=function()
+	{ 
+	  if(reachBottom()){
+		//alert("神鼎飞丹砂");
+		//加载五次之后，暂停
+		if(count <5){
+			loadMore();
+			count++;
+		}else{
+			alert('现在不加载了。');
+		}
+	  }
+	}
+	function reachBottom() {
+		var scrollTop = 0;
+		var clientHeight = 0;
+		var scrollHeight = 0;
+		if (document.documentElement && document.documentElement.scrollTop) {
+			scrollTop = document.documentElement.scrollTop;
+		} else if (document.body) {
+			scrollTop = document.body.scrollTop;
+		}
+		if (document.body.clientHeight && document.documentElement.clientHeight) {
+			clientHeight = (document.body.clientHeight < document.documentElement.clientHeight) ? document.body.clientHeight: document.documentElement.clientHeight;
+		} else {
+			clientHeight = (document.body.clientHeight > document.documentElement.clientHeight) ? document.body.clientHeight: document.documentElement.clientHeight;
+		}
+		scrollHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+		if (scrollTop + clientHeight == scrollHeight) {
+			return true;
+		} else {
+			return false;
+		}
+
+	}
+	function loadMore()  
+	{  
+		$.getJSON("__URL__/getMore",{get:'more'},function(json){
+				if(json.status == 1)  
+				{  
+					var oProduct;  
+					json = json.data;
+					for(var i=0, l=json.length; i<l; i++)  
+					{  
+						oProduct = json[i];  						
+							  
+						$item = $('<div class="grid"><div class="imgholder"> <img src="'+oProduct.imgURL+'" /></div><div class="meta"><strong>'+oProduct.title+'{$v.author}</strong><p>{$v.content}</p></div></div>').hide();  
+						  
+						$("#container").append($item);  
+						$item.fadeIn();  
+						//alert("显示");
+					}  
+				}
+				$('#container').BlocksIt({
+					numOfCol: 4,
+					offsetX: 8,
+					offsetY: 8
+				});
+			});
+		}
+</script>
+</head>
+<body>
+<!-- Content -->
+<include file="Articles:header_nav" />
+<section id="wrapper">
+  <div id="container">
+      
+    <foreach name="list" item="v">
+    <div class="grid">
+      <div class="imgholder"><a href="#"> <img src="__PUBLIC__/../Uploads/images/1.jpg" /> </a></div>
+      <div class="meta">
+	     <strong>{$v.author}ddd</strong>
+         <p>{$v.content}</p>
+	     {$v.time}
+	  </div>
+    </div>
+    </foreach>
+
+
+    <!---->
+  </div>
+</section>
+</body>
+</html>

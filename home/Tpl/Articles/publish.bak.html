@@ -1,0 +1,236 @@
+<include file="Public:head"/>
+<script src="__PUBLIC__/js/jquery/jquery.form.min.js"> </script>
+<style>
+.user_rate {font-size:14px; position:relative; padding:10px 0;}
+.user_rate p {margin:0; padding:0; display:inline; height:40px; overflow:hidden; position:absolute; top:0; left:100px; margin-left:285px;}
+.user_rate p span.s {font-size:36px; line-height:36px; float:left; font-weight:bold; color:#DD5400;}
+.user_rate p span.g {font-size:22px; display:block; float:left; color:#DD5400;}
+.big_rate_bak {margin-left:2px; padding:0;width:280px; height:28px; text-align:left; position:absolute; top:3px; left:85px; display:inline-block; background:url(__PUBLIC__/images/b_star.gif) left bottom repeat-x;}
+.big_rate_bak b {display:inline-block; width:24px; height:28px; position:relative; z-index:1000; cursor:pointer; overflow:hidden;}
+.big_rate_up {width:280px; height:28px; position:absolute; top:0; left:0; background:url(__PUBLIC__/images/b_star.gif) left top;}
+</style>
+<div class="container-fluid">
+  <div class="row-fluid">
+	 <div class="span3">
+		<include file="Public:left_nav" />
+	 </div>
+	<div class="span9 main">
+		
+			 <section id="publish">
+			 <div class="page-header">
+				   <h1>我来创造</h1>
+			 </div>
+				<form class="form-horizontal" id="publishPosition" method="post">
+					<div class="row-fluid">
+						<img class="span6" src="__PUBLIC__/images/b/p8.png" />	
+						<input type="hidden"  name="position_image"  id="position_image" value="abcde" required />
+					</div>
+				    <hr />
+					<input type="text" class="span6" name="position_title" id="position_title" placeholder="输入标题" required />
+					
+					<hr>
+					<textarea rows="5" class="span6" name="action_description"  id="action_description" placeholder="动作说明" required></textarea>
+					<hr>
+					
+					<div class="user_rate">难易指数：
+						<div class="big_rate_bak">
+							<b rate="1" onclick="javascript:up_rate(1,10);">&nbsp;</b>
+							<b rate="2" onclick="javascript:up_rate(1,20);">&nbsp;</b>
+							<b rate="3" onclick="javascript:up_rate(1,30);">&nbsp;</b>
+							<b rate="4" onclick="javascript:up_rate(1,40);">&nbsp;</b>
+							<b rate="5" onclick="javascript:up_rate(1,50);">&nbsp;</b>
+							<b rate="6" onclick="javascript:up_rate(1,60);">&nbsp;</b>
+							<b rate="7" onclick="javascript:up_rate(1,70);">&nbsp;</b>
+							<b rate="8" onclick="javascript:up_rate(1,80);">&nbsp;</b>
+							<b rate="9" onclick="javascript:up_rate(1,90);">&nbsp;</b>
+							<b rate="10" onclick="javascript:up_rate(1,100);">&nbsp;</b>
+							<div style="width:280px;" id="big_rate_up1" class="big_rate_up"></div>
+						</div>
+						<p><span id="s1" class="s"></span><span id="g1" class="g"></span>
+							<input type="hidden" id="difficulty_index" name="difficulty_index" value="" />
+						</p>
+					</div>
+					<hr>
+					<textarea rows="3" class="span6" name="difficulty_description" id="dififculty_description" placeholder="难度说明" required></textarea>
+					<hr>
+					<div class="user_rate">快感指数：
+						<div class="big_rate_bak">
+							<b rate="1" onclick="javascript:up_rate(2,10);">&nbsp;</b>
+							<b rate="2" onclick="javascript:up_rate(2,20);">&nbsp;</b>
+							<b rate="3" onclick="javascript:up_rate(2,30);">&nbsp;</b>
+							<b rate="4" onclick="javascript:up_rate(2,40);">&nbsp;</b>
+							<b rate="5" onclick="javascript:up_rate(2,50);">&nbsp;</b>
+							<b rate="6" onclick="javascript:up_rate(2,60);">&nbsp;</b>
+							<b rate="7" onclick="javascript:up_rate(2,70);">&nbsp;</b>
+							<b rate="8" onclick="javascript:up_rate(2,80);">&nbsp;</b>
+							<b rate="9" onclick="javascript:up_rate(2,90);">&nbsp;</b>
+							<b rate="10" onclick="javascript:up_rate(2,100);">&nbsp;</b>
+							<div style="width:280px;" id="big_rate_up2" class="big_rate_up"></div>
+						</div>
+						<p><span id="s2" class="s"></span><span id="g2" class="g"></span>
+							<input type="hidden" id="pleasure_index" name="pleasure_index" value="" />
+					    </p>
+					</div>
+					<textarea rows="3" class="span6" name="pleasure_description" id="pleasure_description" placeholder="快感说明" required></textarea>
+					<hr>
+					<div class="user_rate">养眼指数：
+						<div class="big_rate_bak">
+							<b rate="1" onclick="javascript:up_rate(3,10);">&nbsp;</b>
+							<b rate="2" onclick="javascript:up_rate(3,20);">&nbsp;</b>
+							<b rate="3" onclick="javascript:up_rate(3,30);">&nbsp;</b>
+							<b rate="4" onclick="javascript:up_rate(3,40);">&nbsp;</b>
+							<b rate="5" onclick="javascript:up_rate(3,50);">&nbsp;</b>
+							<b rate="6" onclick="javascript:up_rate(3,60);">&nbsp;</b>
+							<b rate="7" onclick="javascript:up_rate(3,70);">&nbsp;</b>
+							<b rate="8" onclick="javascript:up_rate(3,80);">&nbsp;</b>
+							<b rate="9" onclick="javascript:up_rate(3,90);">&nbsp;</b>
+							<b rate="10" onclick="javascript:up_rate(3,100);">&nbsp;</b>
+							<div style="width:280px;" id="big_rate_up3" class="big_rate_up"></div>
+						</div>
+						<p><span id="s3" class="s"></span><span id="g3" class="g"></span>
+							<input type="hidden" id="eyeful_index" name="eyeful_index" value="" />
+						</p>
+					</div>
+					<hr>
+					<textarea rows="3" class="span6" name="eyeful_description" id="eyeful_description" placeholder="养眼说明" required></textarea>
+					<hr>
+					<div class="user_rate">养生指数：
+						<div class="big_rate_bak">
+							<b rate="1" onclick="javascript:up_rate(4,10);">&nbsp;</b>
+							<b rate="2" onclick="javascript:up_rate(4,20);">&nbsp;</b>
+							<b rate="3" onclick="javascript:up_rate(4,30);">&nbsp;</b>
+							<b rate="4" onclick="javascript:up_rate(4,40);">&nbsp;</b>
+							<b rate="5" onclick="javascript:up_rate(4,50);">&nbsp;</b>
+							<b rate="6" onclick="javascript:up_rate(4,60);">&nbsp;</b>
+							<b rate="7" onclick="javascript:up_rate(4,70);">&nbsp;</b>
+							<b rate="8" onclick="javascript:up_rate(4,80);">&nbsp;</b>
+							<b rate="9" onclick="javascript:up_rate(4,90);">&nbsp;</b>
+							<b rate="10" onclick="javascript:up_rate(4,100);">&nbsp;</b>
+							<div style="width:280px;" id="big_rate_up4" class="big_rate_up"></div>
+						</div>
+						<p><span id="s4" class="s"></span><span id="g4" class="g"></span>
+							<input type="hidden" id="health_index" name="health_index" value="" />
+						</p>
+					</div>
+					<hr>
+					<textarea rows="3" class="span6" name="health_description" id="health_description" placeholder="养生说明" required></textarea>
+					<button type="submit" class="btn btn-large btn-primary">提交</button>
+					<button type="button" id="fat-btn" class="btn btn-large" data-loading-text="自动保存中">存为草稿</button>
+					
+				</form>__SELF__
+			</section>
+		
+	</div>
+   
+   <div>
+</div>
+
+<script>
+  // button state demo
+    $('#fat-btn').click(function () {
+        var btn = $(this);
+        //btn.button('loading');
+	
+		var position_title = $('#position_title').val(); 
+		var position_image = $('#position_image').val(); 
+		var action_description = $('#action_description').attr("value");
+		var difficulty_description = $('#difficulty_description').attr("value");
+		var pleasure_description = $('#pleasure_description').attr("value");
+		var eyeful_description = $('#eyeful_description').attr("value");
+		var health_description = $('#health_description').attr("value");
+		var s1 = $('#s1').html()
+		var s2 = $('#s2').html()
+		var s3 = $('#s3').html()
+		var s4 = $('#s4').html()
+		 //alert(s1+s2+s3+s4);
+		 if(s1 && s2 && s3 && s4 && position_title!='' && position_image!='' && action_description!='' && difficulty_description!='' && pleasure_description!='' && eyeful_description!='' && health_description!=''){
+			var s11 = $('#s1').html()
+					var s22 = $('#s2').html()
+					var s33 = $('#s3').html()
+					var s44 = $('#s4').html()
+					$('#difficulty_index').val(s11);
+					$('#pleasure_index').val(s22);
+					$('#eyeful_index').val(s33);
+					$('#health_index').val(s44);
+		   //alert(position_title + position_image+action_description+diffculty_description+pleasure_description+eyeful_description+health_description+s1+s2+s3+s4);
+		   $('#publishPosition').ajaxSubmit({
+				url: "__URL__/publish",
+				dataType: "text",
+				callback: function (data) {
+					if(data.status == 1){
+						btn.button('reset');
+					 }else{
+						$('#fat-btn').html('自动保存失败');//如果是input或者textarea 使用$('#fat-btn').val();
+					 }
+				},
+				before: function () {
+					
+				}
+			});
+		   /*$.post('{:U("Articles/publish")}',{position_title:position_title,article_content:content},function(data){
+			 alert(data.info);
+			 if(data.status == 1){
+				btn.button('reset');
+			 }else{
+				$('#fat-btn').html('自动保存失败');//如果是input或者textarea 使用$('#fat-btn').val();
+			 }
+		   }); 
+		   */
+			
+		 
+		 }
+		
+         
+      
+      });
+
+</script>
+
+<script type="text/javascript">
+$(function(){
+	get_rate(1,0);//初始化星级
+	get_rate(2,0);
+	get_rate(3,0);
+	get_rate(4,0);
+})
+function get_rate(i,rate){
+	rate=rate.toString();
+	var s;
+	var g;
+	$("#g"+i).show();
+	if (rate.length>=3){
+		s=10;	
+		g=0;
+		//$("#g"+i).hide();
+	}else if(rate=="0"){
+		s=0;
+		g=0;
+	}else{
+		s=rate.substr(0,1);
+		g=rate.substr(1,1);
+	}
+	$("#s"+i).text(s);
+	$("#g"+i).text("."+ g);
+	$("#big_rate_up"+i).animate({width:(parseInt(s)+parseInt(g)/10) * 28,height:26},1000);
+	$("#big_rate_bak" +i+ " b").each(function(){
+		$(this).mouseover(function(){
+			$("#big_rate_up"+i).width($(this).attr("rate") * 28 );
+			$("#s"+i).text($(this).attr("rate"));
+			$("#g"+i).text("");
+		}).click(function(){
+			$("#f").text($(this).attr("rate"));
+			$("#my_rate").show();
+		})
+	})
+	$("#big_rate_bak"+i).mouseout(function(){
+		$("#s"+i).text(s);
+		$("#g"+i).text("."+ g);
+		$("#big_rate_up"+i).width((parseInt(s)+parseInt(g)/10) * 28);
+	})
+}
+function up_rate(i,rate){
+	$("#big_rate_up"+i).width("0");
+	get_rate(i,rate);
+}
+</script>
+<include file="Public:foot">

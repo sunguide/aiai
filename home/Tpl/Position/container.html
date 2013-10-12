@@ -1,0 +1,63 @@
+
+<div class="main">
+ <php>
+	if(!$list)
+	echo '<div class="span12" style="width:100%"><p style="text-align:center;wfont-size:40px">暂无</p></div>';
+ 
+ </php>
+  <div class="row-fluid margin-bottom10">
+      
+	  <volist name="list" id="vo" key="k"  mod="3">
+		
+		 <eq name="mod" value="2"></div><div class="row-fluid margin-bottom10"></eq>
+		  
+			<div class="span4">
+				<div class="thumbnail">
+				  <a href="__APP__/Position/detail/id/{$vo.id}"><img src="__PUBLIC__/images/b/p{$vo.position_image}.png" alt="300x200"></a>
+				  <div class="caption">
+					<h3>{$vo.position_title}</h3>
+					<div class="statistics">
+					   <span class="badge badge-info">{$vo.view}</span>学习
+					   <span class="badge badge-important">{$vo.todo}</span>想试
+					   <span class="badge badge-success">{$vo.havedone}</span>已试
+					</div>
+					<hr>
+					<p> 
+						<span id="id-{$vo.id}" style="cursor:pointer" onclick="favorites('{:U('Position/favorites')}','{$vo.id}');"><i class="icon-star"></i>收藏</span>
+						<span class="right"><a href="__APP__/Position/detail/id/{$vo.id}" class="btn">查看</a></span></p>
+				  </div>
+				</div>
+			 
+	    </div>
+    
+	  </volist>
+	  
+	
+  
+</div>
+<script>
+//处理收藏	
+function favorites(url,id){
+	$.getJSON(url,{pid:id},function(json){
+		
+		if(json.status == 1){
+			$("#id-"+id).html('已收藏');
+			
+		}else{
+			$.warn('提示',"收藏失败");
+		}
+	});
+}
+	/**添加联系人事件
+		$("#addContact").ajaxForm(function(){
+			$(this).ajaxSubmit({
+				url:'__APP__/Contacts/addContact',
+				dataType:'json',
+				success:function(json){
+					$.warn('提示',json.info);
+				}
+				});
+			return false;
+		});
+		**/
+</script>

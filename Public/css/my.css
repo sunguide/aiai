@@ -1,0 +1,84 @@
+/**
+author sun 自定义的
+
+*/
+.post{
+	border-bottom: 1px solid #eee;
+	padding: 14px 10px;
+	word-wrap: break-word;
+}
+.post h2 {
+	font-size: 20px;
+	font-weight:normal;
+	margin: 0 0 5px;
+}
+.post .meta {
+	color: #999;
+	display: block;
+}
+.views .meta-tags .datetime .meta-user {
+	padding-left: 20px;
+	margin-right: 10px;
+	
+}
+.post .meta .meta-tags li {
+	position: relative;
+	display: inline-block;
+}
+.views .meta-tags .daatetime .meta-user {
+	float:left;
+}
+.post .meta .meta-tags {
+	list-style-type: none;
+	display: inline;
+}
+.nav li{
+	margin-top:0px;
+	float: left;
+	margin-left: 20px;
+	padding-top:-10px;
+	color:#e6e6e6;;
+
+}
+.nav li  a {
+	font-size:28px;
+	height:40px;
+}
+.nav li  a:hover {
+	background-color:#BF1E4B;
+}
+.nav ul li {
+	display: inline;
+	font-size: 18px;
+	padding: 0 5px;
+	border-right: 1px solid #67B3E3;
+	margin-right: 10px;
+	padding-right: 10px;
+	
+}
+.content-title {
+	text-align:center;
+}
+.recommended  ul {
+	list-style:none;
+	
+}
+.hot ul {
+	list-style:none;
+	margin-left:-10px;
+	margin-right:-10px;
+}
+.hot li {
+	display: inline;
+	font-size:14px;
+	margin-left:10px;
+}
+.recommended li {
+	border-bottom: 1px solid #ddd;
+	margin-left: -36px;
+	margin-right: -1px;
+	padding: 10px 10px 10px;
+}
+.header {
+    background:#BF1E4B;
+}

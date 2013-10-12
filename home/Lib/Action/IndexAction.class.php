@@ -11,10 +11,10 @@ class IndexAction extends Action {
 		//B('Authenticate', $action);
 	}
     public function index(){
-		$Position = M('Position');
-		$data = $Position->where("article_status = 'publish'")->order('create_time DESC')->select();
-		$this->assign('list',$data);
-		$this->display();
+		//$Position = M('Position');
+		//$data = $Position->where("article_status = 'publish'")->order('create_time DESC')->select();
+		//$this->assign('list',$data);
+		$this->display('Articles/search');
     }
 	public function image(){
 		$s = A('Image'); 

@@ -1,0 +1,71 @@
+<include file="Articles:header" />
+<include file="Articles:header_nav" />
+       
+        
+        <!-- section content -->
+        <section class="section">
+            <div class="container" style="width:960px;">
+	
+                <div class="row-fluid" style="margin-top:80px">
+                    <!--Sign In-->
+                    <div class="span8">
+					
+                        <div id="content" class="content maincontent">
+                           
+                            <div class="content-body" style="padding: 0 20px 20px 20px;">
+                                <include file="Public:404" />
+								<!-- Comment BEGIN -->
+								<!-- Duoshuo Comment BEGIN -->
+								<div class="ds-thread"></div>
+								<script type="text/javascript">
+									var duoshuoQuery = {short_name:"imaiai"};
+									(function() {
+										var ds = document.createElement('script');
+										ds.type = 'text/javascript';ds.async = true;
+										ds.src = 'http://static.duoshuo.com/embed.js';
+										ds.charset = 'UTF-8';
+										(document.getElementsByTagName('head')[0] 
+										|| document.getElementsByTagName('body')[0]).appendChild(ds);
+									})();
+								</script>
+								<!-- Duoshuo Comment END -->
+                            </div>
+                        </div>
+                    </div><!--/Sign In-->
+                    <!--right_nav-->
+                    <div class="span4">
+                        <include file="Articles/nav_right" />
+                    </div><!--/!--right_nav-->
+                </div><!-- /row -->
+            </div><!-- /container -->
+            
+           
+        </section>
+		
+        <!-- javascript
+        ================================================== -->
+    
+        <script src="__PUBLIC__/js/jquery/jquery-1.8.2.js"></script>
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+              
+            });
+			//键盘箭头控制跳转
+			var preview_page = "{$pre}"; 
+			var next_page = "{$next}"; 
+			var index_page = "index.html"; 
+			 
+			function jumpPage() { 
+				if (event.keyCode==37) 
+					location=preview_page; 
+				if (event.keyCode==39) 
+					location=next_page; 
+				if (event.keyCode==13) 
+					location=index_page; 
+			} 
+			document.onkeydown=jumpPage; 
+        </script>
+	   <include file="Articles/footer" />
+    </body>
+</html>

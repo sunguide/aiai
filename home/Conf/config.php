@@ -13,7 +13,11 @@
 		'DB_PREFIX'=>'aiai_',
 		'URL_ROUTER_ON'   => true, //开启路由
 		'URL_ROUTE_RULES' => array( //定义路由规则
-			'About'					 => 'Public/about', 
+			'about'		=> 'Public/about', 
+			'search'	=> 'Articles/search',
+			'tu'        => 'Tu/index',
+			'position/:id'  => 'Position/detail'
+
 		),
 		'URL_MODEL'=> 1,
 

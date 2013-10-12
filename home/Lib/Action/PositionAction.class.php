@@ -7,12 +7,15 @@ class PositionAction extends Action {
 		$data = array(
 			''	
 		);
-		if(!$this->_uid) $this->redirect('Public/login');
+		//if(!$this->_uid) $this->redirect('Public/login');
 		//B('Authenticate', $action);
 	}
     public function index(){
-		
+		$Position = M('Position');
+		$data = $Position->where("article_status = 'publish'")->order('create_time DESC')->select();
+		$this->assign('list',$data);
 		$this->display();
+		
     }
 	public function getPosition(){
 		$Position = M('Position');

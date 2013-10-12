@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<html xmlns:wb=“http://open.weibo.com/wb”>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>安农微博墙|聚合最新校园动态</title>
+<link rel='stylesheet' href='/ii/Public/wall/css/lanrenzhijia.css' media='screen' />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="/ii/Public/wall/js/blocksit.min.js"></script>
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+<script>
+$(document).ready(function() {
+	//vendor script
+	$('#header')
+	.css({ 'top':-50 })
+	.delay(1000)
+	.animate({'top': 0}, 800);
+
+	$('#footer')
+	.css({ 'bottom':-15 })
+	.delay(1000)
+	.animate({'bottom': 0}, 800);
+
+	//blocksit define
+	$(window).load( function() {
+		$('#container').BlocksIt({
+			numOfCol: 4,
+			offsetX: 8,
+			offsetY: 8
+		});
+	});
+
+	//window resize
+	var currentWidth = 1100;
+	$(window).resize(function() {
+		var winWidth = $(window).width();
+		var conWidth;
+		if(winWidth < 660) {
+			conWidth = 440;
+			col = 2
+		} else if(winWidth < 880) {
+			conWidth = 660;
+			col = 3
+		} else if(winWidth < 1100) {
+			conWidth = 880;
+			col = 4;
+		} else {
+			conWidth = 1100;
+			col = 5;
+		}
+
+		if(conWidth != currentWidth) {
+			currentWidth = conWidth;
+			$('#container').width(conWidth);
+			$('#container').BlocksIt({
+				numOfCol: col,
+				offsetX: 8,
+				offsetY: 8
+			});
+		}
+	});
+});
+
+//检测滑到底部，加载更多
+   window.onscroll=function()
+	{
+	  if(reachBottom()){
+		alert("神鼎飞丹砂");
+	  }
+	}
+	function reachBottom() {
+		var scrollTop = 0;
+		var clientHeight = 0;
+		var scrollHeight = 0;
+		if (document.documentElement && document.documentElement.scrollTop) {
+			scrollTop = document.documentElement.scrollTop;
+		} else if (document.body) {
+			scrollTop = document.body.scrollTop;
+		}
+		if (document.body.clientHeight && document.documentElement.clientHeight) {
+			clientHeight = (document.body.clientHeight < document.documentElement.clientHeight) ? document.body.clientHeight: document.documentElement.clientHeight;
+		} else {
+			clientHeight = (document.body.clientHeight > document.documentElement.clientHeight) ? document.body.clientHeight: document.documentElement.clientHeight;
+		}
+		scrollHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+		if (scrollTop + clientHeight == scrollHeight) {
+			return true;
+		} else {
+			return false;
+    }
+}
+</script>
+</head>
+<body>
+<!-- Content -->
+
+<section id="wrapper">
+  <div id="container">
+      <div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/img19.jpg" /> </div>
+      <strong><a href="http://weibo.com/ahauwall" title="安农微博墙">Ahau Wall</a></strong>
+      <p>安农微博墙，聚合最新校园动态，申请收录请加关注即可。</p>
+      <wb:follow-button uid="3302171384" type="red_3" width="100%" height="24" ></wb:follow-button>
+      <div class="meta">QQ：434875477</div>
+    </div>
+    <div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div><div class="grid">
+      <div class="imgholder"> <img src="/ii/Public/wall/images/1.jpg" /> </div>
+      <strong></strong>
+      <p></p>
+      <div class="meta">08:00:00</div>
+    </div>
+
+    <!---->
+  </div>
+</section>
+</body>
+</html>

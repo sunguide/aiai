@@ -1,76 +1,92 @@
-<include file="Public:head"/>
-<include file="Public:head_nav"/>
+<include file="Articles:header" />
+<include file="Articles:header_nav" />
 
-<div class="container-fluid">
-  <div class="row-fluid">
-	<div class="span1"></div>
-	<div class="span8 main">
-		
-			 <section id="publish">
-			 <div class="page-header">
-				   <h1>发布文章</h1>
-			 </div>
-				<form class="form-horizontal" action="__URL__/commentAdd" method="post">
-				   <div class="control-group">
-					  <label class="control-label" for="name">文章标题</label>
-					  <div class="controls">
-						<input type="text" name="name" placeholder="输入姓名" /><span> 这是必须的哦！</span>
-					  </div>
-				   </div>
-				   <div class="control-group">
-					  <label class="control-label" for="content">内容</label>
-					<div class="controls">
-					<!---kind编辑器-->
-					<textarea id="editor_id" name="content" class="textarea">
-						</textarea>
-					<script charset="utf-8" src="__PUBLIC__/js/kindeditor/kindeditor.js"></script>
-					<script charset="utf-8" src="__PUBLIC__/js/kindeditorlang/zh_CN.js"></script>
-					<script>
-						 var editor;
-						 KindEditor.ready(function(K) {
-						  editor = K.create('#editor_id',{
-							items:['preview','fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', '|', 'image', 'multiimage','flash', 'media', 'insertfile',  'hr', 'emoticons', 'link', 'unlink']
-							});
-						});
-						// 取得HTML内容
-						html = editor.html();
-						editor.sync();
-						</script>
-					<!---kind编辑器-->
-					</div>
-				 </div>
+        <!-- section content -->
+        <section class="section" style="background-color:#fff">
+            <div class="container" style="width:960px;">
+                <div class="row-fluid" style="margin-top:80px">
+                    <!--Sign In-->
+                    <div class="span8">
+						<div class="search">
+							<form type="post" action="__APP__/Articles">
+								<div class="control-group">
+									<div class="input-append input-icon-prepend">
+										<div class="add-on">
+											<a title="search" class="icon"><i class="icon-search" style="zoom:1.6;margin-top:5px;"></i></a>
+											<input class="input-xlarge" type="text" name="keywords" placeholder="今日怎么爱?" value="{$keywords}" style="height:50px;font-size:18px;"/>
+										</div>
+										<input type="submit" class="btn" value="爱一下" style="height: 60px;font-size:28px;background:#BF1E4B;color: white;"/>
+									</div>
+								</div>
+							</form>
+						</div>
+                        <div id="content" class="maincontent">
+                            <div class="content-header">
+								<if condition="count($list) eq 0">
+									<span>很抱歉，没找到你要的结果！</span>
+								<else />
+									<span>献给你最好的爱！</span>
+								</if>
+                            </div>
+                            <div class="content-body">
+								<volist name="list" id="vo">
+                                <div class="post">
+									<h2>{$i}.<a href="__APP__/Articles/Detail/id/{$vo.article_id}">{$vo.title}</a></h2>
+									<div class="meta">
+										<span class="views"><i class="icon-eye-open"></i>{$vo.view_times} 次浏览</span>
+										<ul class="meta-tags">
+										  <li><i class="icon-tags"></i></li>
+										  <li><a href="__APP__/Articles?keywords=性技巧">性技巧</a>,</li>
+										  <li><a href="__APP__/Articles?keywords=高潮">高潮</a><li>
+									    </ul>
+									
+								   </div>
+								</div>
+								</volist>
+								 
 
-				<div class="control-group">
-					<div class="controls">
-					<label class="checkbox">
-						<input type="checkbox" name="know">认识我└(^o^)┘
-					</label>
-					<hr>
-					<button type="submit" class="btn btn-large btn-primary">&nbsp;&nbsp;提&nbsp;&nbsp;&nbsp;&nbsp;交&nbsp;&nbsp;</button>
-					</div>
-				</div>
-				</form>
-			</section>
-		
-	</div>
-    <div class="span3">
-		<ul class="nav nav-list bs-docs-sidenav">
-          <li class=""><a href="#dropdowns"><i class="icon-chevron-right"></i> 下拉菜单</a></li>
-          <li class=""><a href="#buttonGroups"><i class="icon-chevron-right"></i> 按钮组</a></li>
-          <li class=""><a href="#buttonDropdowns"><i class="icon-chevron-right"></i> 按钮下拉菜单</a></li>
-          <li class="active"><a href="#navs"><i class="icon-chevron-right"></i> 导航</a></li>
-          <li class=""><a href="#navbar"><i class="icon-chevron-right"></i> 导航条</a></li>
-          <li><a href="#breadcrumbs"><i class="icon-chevron-right"></i> 面包屑</a></li>
-          <li><a href="#pagination"><i class="icon-chevron-right"></i> 分页</a></li>
-          <li><a href="#labels-badges"><i class="icon-chevron-right"></i> 标签与徽章</a></li>
-          <li><a href="#typography"><i class="icon-chevron-right"></i> 排版</a></li>
-          <li><a href="#thumbnails"><i class="icon-chevron-right"></i> 缩略图</a></li>
-          <li><a href="#alerts"><i class="icon-chevron-right"></i> 警告框</a></li>
-          <li><a href="#progress"><i class="icon-chevron-right"></i> 进度条</a></li>
-          <li><a href="#media"><i class="icon-chevron-right"></i> 媒体对象</a></li>
-          <li><a href="#misc"><i class="icon-chevron-right"></i> Misc</a></li>
-        </ul>
-	</div>
-   <div>
-</div>
-<include file="Public:foot">
+                            </div>
+							
+                        </div>
+						<div class="pagination">
+							<ul>
+							{$page}
+							</ul>
+						</div>
+                    </div><!--/Sign In-->
+                    <!--Sign Up-->
+                    <div class="span4">
+                        <include file="Articles/nav_right" />
+						 
+                    </div><!-- /row -->
+            </div><!-- /container -->
+            
+            
+        </section>
+
+        <!-- javascript
+		================================================== -->
+    
+        <script src="__PUBLIC__/js/jquery/jquery-1.8.2.js"></script>
+        <script src="__PUBLIC__/js/bootstrap/bootstrap.js"></script>
+        <script src="__PUBLIC__/js/uniform/jquery.uniform.js"></script>
+        
+        <script src="__PUBLIC__/js/validate/jquery.metadata.js"></script>
+        <script src="__PUBLIC__/js/validate/jquery.validate.js"></script>
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                // try your js
+                
+                // uniform
+                $('[data-form=uniform]').uniform();
+                
+                // validate
+                $('#sign-in').validate();
+                $('#sign-up').validate();
+                $('#form-recover').validate();
+            })
+        </script>
+		<include file="Articles/footer" />
+    </body>
+</html>

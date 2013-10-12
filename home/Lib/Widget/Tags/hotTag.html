@@ -1,0 +1,15 @@
+<div class="box">
+	<div class="box-header">
+		<span>热门搜索</span>
+	</div>
+	<div class="box-body bg-white">
+	   <div class="hot">
+		  <ul>
+			<volist name="hotSearch" id="vo">
+			<li><a href="__APP__/Articles?keywords={$vo.search_keywords}"><span class="label label-info">{$vo.search_keywords}</span></a></li>
+			</volist>
+		  </ul>
+	   </div>
+
+	</div>
+</div>

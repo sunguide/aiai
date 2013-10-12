@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+				<link href="http://simg.sinajs.cn/cblog/css/newcwb_frame.css?1379481569" rel="stylesheet" type="text/css"/>
+				<title>新浪长微博</title>
+		<script type="text/javascript">
+		  var config = {
+			sharePic : 'http://www.sinaimg.cn/blog/qing/image/tu/weiboshare.png'
+		  };
+		</script>
+		<script src="http://sjs.sinajs.cn/cblog/dist/jquery183min.js?1379481569" type="text/javascript"></script>
+		<script src="http://sjs.sinajs.cn/cblog/dist/sea.js?1379481569" type="text/javascript"></script>
+
+		<style>
+			html {
+				overflow-y: scroll;
+			}
+			/* 除IE6浏览器的通用方法 */
+			.ie6fixedTL {
+				position: fixed;
+				left: 0;
+				top: 0
+			}
+			.ie6fixedBR {
+				position: fixed;
+				right: 0;
+				bottom: 0
+			}
+			.ie6fixedBR-gotop {
+				position: fixed;
+				right: 20px;
+				bottom: 30px;
+			}
+
+			/* IE6浏览器的特有方法 */
+			/* 修正IE6振动bug */
+			* html, * html body {
+				background-image: url(about:blank);
+				background-attachment: fixed
+			}
+			* html .ie6fixedTL {
+				position: absolute;
+				left: expression(eval(document.documentElement.scrollLeft));
+				top: expression(eval(document.documentElement.scrollTop))
+			}
+			* html .ie6fixedBR, * html .ie6fixedBR-gotop {
+				position: absolute;
+				left: expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-this.offsetWidth)-(parseInt(this.currentStyle.marginLeft, 10)||0)-(parseInt(this.currentStyle.marginRight, 10)||0));
+				top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop, 10)||0)-(parseInt(this.currentStyle.marginBottom, 10)||0)))
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="loginLayer" style="margin-top: -485px">
+			<div class="loginMod"> <em>登&nbsp;录</em>
+				<div class="textArea">
+					<div class="hd"></div>
+					<div class="bd">
+						<div class="text">
+							<div class="title">微博帐号登录<a target="_blank" href="http://weibo.com/signup/signup.php">注册微博</a></div>
+							<div class="form">
+								<div class="lb"><span class="txt">用户名：</span>
+									<label>
+										<input type="text" name="username"
+										class="ipt"
+										placeholder="邮箱/会员帐号/手机号"/>
+									</label>
+								</div>
+								<div class="lb"><span class="txt">密&nbsp;&nbsp;&nbsp;码：</span>
+									<label>
+										<input type="password" name="password"
+										class="ipt"
+										placeholder="密码"/>
+									</label>
+								</div>
+								<div class="lb" style="display: none;"><span class="txt">验证码：</span>
+									<label>
+										<input name="door"
+										type="text"
+										class="iptc"
+										placeholder="验证码"/>
+									</label>
+									<span
+										class="vcode"><img src="http://simg.sinajs.cn/cblog/images/cwb/tmp_yzm.png"/><a href="#"
+											title="刷新验证码"></a></span> </div>
+								<div class="lb" style="display: none;"><span class="txt">微盾码：</span>
+									<label>
+										<input name="vsnval"
+										type="text"
+										class="ipt"
+										placeholder="微盾动态码"/>
+									</label>
+								</div>
+								<div class="clear"></div>
+								<div class="ck">
+									<label>
+										<input name="autologin" checked="checked" type="checkbox"/>
+										<span class="ico_f ico_t"></span>下次自动登录</label>
+									<a target="_blank"
+										href="http://login.sina.com.cn/member/getpwd/getpwd0.php?entry=weibo">忘记密码？</a></div>
+								<div class="stip" style="display: none;top:33px;left:94px;">
+									<div class="con"><span class="cor"></span>
+										<p><span class="err"></span><span class="jserrmsg">用户名或密码输入错误，请重新输入</span><a href="#"
+											class="close"
+											title="关闭"></a> </p>
+									</div>
+								</div>
+							</div>
+							<div class="btn"><a href="javascript:void(0);" id="btnlogin"><span>登&nbsp;录</span></a></div>
+						</div>
+						<div class="cor"></div>
+					</div>
+					<div class="btm"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="topNav ie6fixedTL" style="z-index:2;">
+			<div class="nickName jslogout" style="display: none;">
+				<a href="http://www.weibo.com"><em>你好，微博昵称</em></a>
+				<a href="#"><span class="cor"></span></a>
+				<div class="func jslogoutbtn" style="display:none;"><a href="javascript:;">退出</a></div>
+			</div>
+			<div class="nickName jslogin" style="display: none;"> <a href="javascript:;" class="sBtn"><span>微博帐号登录</span></a> <a target="_blank" href="http://weibo.com/signup/signup.php">注册</a> </div>
+			<div class="btn" style="display:none;"> <span class="share"> <a href="javascript:;" class="sina" title="新浪微博"></a> <a href="javascript:;" class="qq" title="QQ空间"></a> </span> <a href="javascript:;" class="btn_sc" title="收藏"></a></div>
+		</div>
+		<div class="conLayer">
+			<div class="content" >
+				<div class="step3ToStep1">
+					<div class="desc"> <em>LOGO</em>
+						<h1>新浪长微博工具</h1>
+						<p>把你想说的话写在下面，将发表一条不受140字限制的长微博</p>
+											</div>
+					<div class="step1">
+						<div class="sWrap"> <em>第一步</em>
+							<div class="textArea">
+								<div class="hd"></div>
+								<div class="bd">
+									<div class="text">
+										<textarea class="input_title" id="blog-title" style="height:30px" placeholder="请在这里输入标题"></textarea>
+										<div class="input_content">
+											<textarea id="blog-content" placeholder="请在这里输入内容"></textarea>
+											<p class="emp"></p>
+										</div>
+										<div class="btn"><a id="publish-cblog" class="dis" href="javascript:;" onclick="publish()"><span>生成长微博图片</span></a></div>
+									</div>
+									<div class="cor"></div>
+								</div>
+							<div class="btm">
+							  <div class="skins">
+								<div class="info"><strong>会员专属信纸</strong><span class="novip"><a href='#' target='_blank' >										立即开通
+								</a></span></div>
+								<div class="show">
+								  <ul>
+									<li tpl="1"><a href="javascript:void(0);"><img src="http://simg.sinajs.cn/cblog/images/skins/tmp/skins_img01.png"></a></li>
+									<li tpl="2"><a href="javascript:void(0);"><img src="http://simg.sinajs.cn/cblog/images/skins/tmp/skins_img02.png"></a></li>
+									<li tpl="3"><a href="javascript:void(0);"><img src="http://simg.sinajs.cn/cblog/images/skins/tmp/skins_img03.png"></a></li>
+								  </ul>
+								</div>
+							  </div>
+							</div>
+							</div>
+							
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="stepBtm"> <em></em> </div>
+					<div class="step2" style="display:none;">
+						<div class="sWrap"> <em>第二步</em>
+							<div class="textArea">
+								<div class="hd"></div>
+								<div class="bd">
+									<div class="shareTo">
+										<div class="title">
+											<h3>分享到微博</h3>
+											<div class="count">还可以输入<span>130</span>字</div>
+										</div>
+										<textarea autocomplete="off" id="cblog-weibo-text"></textarea>
+										<div class="ck">
+											<label>
+												<input name="sync_blog" type="checkbox">
+													<span class="ico_f"></span>同步到博客</label>
+														<label><input name="choose_bloger" type="hidden" value=""/><img src="http://simg.sinajs.cn/blog7style/images/common/sg_trans.gif"><a href="javascript:void(0);" class="jsckbloger"><em></em></a>
+											</label>												
+										</div>
+										<div class="btn"><a id="cblog-pub-weibo" class="dis" href="javascript:;" onclick="publishSubmit()"><span>发布长微博</span></a></div>
+									</div>
+									<div class="cor"></div>
+								</div>
+								<div class="tcor"></div>
+								<div class="bbd">
+									<div class="review"><a href="#" target="_blank" id="imgurl"><img id="img" src="http://simg.sinajs.cn/cblog/images/cwb/tmp_review.png"></a><div class="mask"></div></div>
+									<div class="links"><a class="view" target="_blank" href="#">查看原图</a><a class="download" target="_blank" href="#">下载图片</a> </div>
+								</div>
+								<div class="btm"></div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+				<div id="step3" class="step3 sub_true" style="padding-top:15%;display:none;">
+					<div class="sWrap"> <em></em>
+						<div class="textArea">
+							<div class="hd"></div>
+							<div class="bd">
+								<div class="text"> </div>
+								<div class="cor"></div>
+							</div>
+							<div class="btm"></div>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+		<div class="goTop ie6fixedBR-gotop" style="display: none"><a href="javascript:void(0);" title="返回顶部"></a></div>
+		<div class="pageMask" style="display: none;">
+			<div class="dragDropLayer">
+				<div class="bigPic"> <a href="javascript:void(0);" title="关闭" class="close"></a> <img src="http://ww1.sinaimg.cn/large/7cc829d3jw1e0xsamra9fj.jpg" /> </div>
+			</div>
+		</div>
+		<!--
+		<script src="http://sjs.sinajs.cn/cblog/dist/write-min.js" type="text/javascript"></script>
+		-->
+		<script src="__PUBLIC__/js/weibo.js" type="text/javascript"></script>
+		<script>
+			function publish(){
+				var title = $('#blog-title').val();
+				var content = $('#blog-content').val();
+				//$("#img").empty();
+				//alert(title+content);
+				$.post("__APP__/Tools/txtToImage",{title:title,content:content},function(json){
+						//alert(json.info);
+						$('.step2').css('display','block');
+					
+						$("#img").attr('src',json.info);
+						$("#imgurl").attr('href',json.info);
+						$(".view").attr('href',json.info);
+						$(".download").attr('href',json.info);
+					    window.scrollTo(0,document.body.scrollHeight); 
+				});
+			}
+			function publishSubmit(){
+				
+					var $imgurl = $("#img").attr('src');
+					var $weibo = $("#cblog-weibo-text").val();
+					alert($imgurl+$weibo);
+				
+					$.post("__APP__/Tools/publishSubmit",{weibo:$weibo,imgurl:$imgurl},function(json){
+							alert(json.info);
+					});
+			}
+			
+			</script>
+		</script>
+	</body>
+</html>

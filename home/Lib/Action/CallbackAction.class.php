@@ -9,7 +9,7 @@ class CallbackAction extends Action {
 		$sina_s='1c163695f54d5fabe10dd45e747d4ac4'; //新浪微博应用App Secret
 		$callback_url=U('Callback/sina@aiai.im'); //授权回调网址
 		if(isset($_GET['code']) && $_GET['code']!=''){
-			$o=new sinaPHP($sina_k, $sina_s);
+			$o=new Sina($sina_k, $sina_s);
 			$result=$o->access_token($callback_url, $_GET['code']);
 		}
 		if(isset($result['access_token']) && $result['access_token']!=''){

@@ -1,0 +1,43 @@
+<include file="Articles:header" />
+<include file="Articles:header_nav" />   
+        <!-- section content -->
+	<div style="margin:auto;">
+        <section class="section" style="margin:150px 0;">
+            <div class="container">
+                <div class="error-page">
+                    <h1 style="text-align:center;color:#009900">即将推出<span style="font-size:16px;color:#00ff00">Alpha</span></h1>
+                    <p style="text-align:center;font-size:16px;">{$coming}</p>
+                </div>
+            </div>
+        </section>
+	</div>
+        <!-- section footer -->
+        <footer>
+            <a rel="to-top" href="#top"><i class="icofont-circle-arrow-up"></i></a>
+        </footer>
+
+        <!-- javascript
+        ================================================== -->
+        <script src="__PUBLIC__/js/jquery.js"></script>
+        <script src="__PUBLIC__/js/bootstrap.js"></script>
+        <script src="__PUBLIC__/js/uniform/jquery.uniform.js"></script>
+        
+        <script src="__PUBLIC__/js/validate/jquery.metadata.js"></script>
+        <script src="__PUBLIC__/js/validate/jquery.validate.js"></script>
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                // try your js
+                
+                // uniform
+                $('[data-form=uniform]').uniform();
+                
+                // validate
+                $('#sign-in').validate();
+                $('#sign-up').validate();
+                $('#form-recover').validate();
+            })
+        </script>
+		<include file="Articles/footer" />
+    </body>
+</html>

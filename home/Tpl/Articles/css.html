@@ -1,0 +1,231 @@
+<style>
+.content-header span{
+	font-size:18px;
+	margin-left:20px;
+}
+.meta {
+	margin-top:-5px;
+}
+.post {
+	display:block;
+}
+.box {
+	padding: 30px 5px 30px;
+	border: 1px solid #b3b3b3;
+	border-radius: 6px;
+	margin: 20px 0 20px;
+	box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
+	background: #fff;"
+}
+.maincontent {
+	padding: 30px 5px 30px;
+	width:630px;
+	border: 1px solid #b3b3b3;
+	border-radius: 6px;
+	margin: 20px 0 20px;
+	box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
+	background: #fff;"
+}
+.follow {
+	padding: 20px 12px 0 0;
+}
+.follow a {
+    float: left;
+    width: 28px;
+    height: 28px;
+    background-image: url(http://static.haha.mx/images/follow.png);
+    background-repeat: no-repeat;
+    margin: 0 2px 0 0;
+}
+.follow a.f-sina {
+    background-position: left top;
+}
+.follow a.f-qq {
+    background-position: -75px top; 
+}
+.follow a.f-weixin {
+    background-position: -37px top;
+}
+.follow a.f-rss {
+    background-position: -112px top;
+}
+.follow .fl {
+    padding: 0 12px 0 0;
+}
+.follow hr {
+    border-style: solid;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    border-color: #dfdbd4;
+    margin: 14px 0 0 0;
+}
+.box-recommended {
+	margin-top:60px;
+}
+.input-xlarge{
+	width:503px;
+}
+.label {
+	margin-bottom:4px;
+	padding: 4px 4px;
+	font-size:18px
+}
+
+#header {
+	position:absolute;
+	padding:0;
+	width:100%;
+	height:70px;
+	background:none;
+	text-align:center;
+	top: 0;
+	left: 0;
+}
+#header.loggedin {
+	height: 88px;
+}
+#header.fixed {
+	position:fixed;
+	background:#fff;
+	z-index:1000;
+	-webkit-box-shadow:rgba(0,0,0,0.3) 0 1px 8px;
+	-moz-box-shadow:rgba(0,0,0,0.3) 0 1px 8px;
+	box-shadow:rgba(0,0,0,0.3) 0 1px 8px
+}
+
+#header .fullmenu .current_page_item a{
+  color: white;
+  font-weight: bold;
+}
+
+#header .fullmenu .current_page_item a:hover{
+  font-weight: bold;
+}
+
+#header .fullmenu .current_page_item:nth-child(2) a{
+  font-weight: normal;
+  color: #b4b4b4
+}
+
+#header.fixed .fullmenu a:hover,#header.fixed .fullmenu .active a,
+#header.fixed .fullmenu .current_page_item a,
+#header.fixed .fullmenu .current_page_item:nth-child(2) a:hover{
+background:#3CB371;;
+}
+#header .fullmenu ul li.logo a:hover {
+	background: none;
+}
+#header.fixed .fullmenu .current_page_item:nth-child(2) a:hover{
+  color: white
+}
+#header.fixed .fullmenu .current_page_item:nth-child(2) a{
+  color: #b4b4b4
+}
+
+#header .fullmenu {
+margin:0 auto;
+max-width:940px;
+}
+@media screen and (max-width: 767px) {
+	#header .fullmenu {
+		display: none;
+	}
+}
+#header .fullmenu ul {
+	background:none;
+	margin-left: 0 !important;
+	text-align: left;
+}
+
+#header .fullmenu ul li{
+  display: inline-block;
+  float: none !important;
+  height:70px;
+  padding:5px 0;
+}
+#header .fullmenu ul li.logo {
+	width: 25%;
+	text-align: left;
+}
+#header .fullmenu ul li.logo img {
+	display: none;
+}
+#header.fixed .fullmenu ul li.logo img {
+	display: inline;
+	margin-left: 10px;
+}
+#header .fullmenu ul a {
+	padding: 40px 20px 30px 20px;
+	width:auto;
+	height:52px !important;
+	color:#ddd;
+	font-size:24px;
+	font-family:'Droid Sans',sans-serif!important;
+	border: none;
+	font-weight: bold;
+}
+
+#header .fullmenu ul li.logo a {
+	padding: 0;
+}
+#header .fullmenu ul a:hover {
+	background:none;
+	color:#fff;
+	text-decoration:none;
+}
+#header .fullmenu ul li a.highlight, #header .fullmenu ul li.manager a, #header .fullmenu ul li.login a {
+	color:#cd562b;
+}
+#header .fullmenu ul li a.highlight:hover, #header .fullmenu ul li.manager a:hover, #header .fullmenu ul li.login a:hover {
+	color: #fff;
+	
+}
+#header .fullmenu ul li.register {
+	margin-left: 5%;
+}
+#header .fullmenu ul li.register a {
+	text-indent:-9999px;
+	background: url(https://www.gimbal.com//wp-content/uploads/2012/12/get_started_small_off.jpg) no-repeat center center;
+	width: 111px;
+	height: 39px;
+	padding: 18px 0 0 0;
+}
+#header .fullmenu ul li.register a:hover {
+	background: url(https://www.gimbal.com//wp-content/uploads/2012/12/get_started_small_on.jpg) no-repeat center center;
+}
+#header .fullmenu ul li.register {
+	display: none;
+}
+#header.fixed .fullmenu ul li:last-child {
+	display: inline-block;
+}
+#header .fullmenu ul .active a {
+	color:#fff;
+}
+.menu {
+	filter: none;
+}
+.menu a { 
+	font-size: 0.9em;
+    font-weight: normal;
+    height: auto;
+    line-height: 2em;
+    margin: 0;
+    padding: 0;
+    text-shadow: none; 
+}
+.menu .current_page_item a, .menu .current-menu-item a {
+	background: none;
+	border: none;
+}
+#header.fixed .menu .current_page_item a, #header.fixed .menu .current-menu-item a {
+	background: #BF1E4B;
+	color: #fff;
+	font-weight: bold;
+}
+.menu a:hover { 
+	background: 0;
+	color: #333;
+	filter:none;
+}
+</style>
